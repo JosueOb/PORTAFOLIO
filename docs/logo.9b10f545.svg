@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="12.5 4.5 454 188" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clip0">
+      <rect x="401" y="262" width="500" height="227"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip0)" transform="matrix(1, 0, 0, 1, -401, -262)">
+    <rect x="413.5" y="266.5" width="227" height="188" stroke="#0C0C0C" stroke-width="6.66667" stroke-miterlimit="8" fill="#0C0C0C"/>
+    <text fill="#FFFFFF" font-family="Century Gothic,Century Gothic_MSFontService,sans-serif" font-weight="400" font-size="107" transform="translate(466.031 400)" style="white-space: pre;">Jo</text>
+    <rect x="640.5" y="266.5" width="227" height="188" stroke="#0C0C0C" stroke-width="6.66667" stroke-miterlimit="8" fill="none"/>
+    <text fill="#F9AA33" font-family="Century Gothic,Century Gothic_MSFontService,sans-serif" font-weight="400" font-size="107" transform="translate(670.636 400)" style="white-space: pre;">Ob</text>
+  </g>
+</svg>

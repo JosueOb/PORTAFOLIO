@@ -1,3 +1,4 @@
 /node_modules
 tailwindcss.config.default.js
 .parcel-cache
+.vscode

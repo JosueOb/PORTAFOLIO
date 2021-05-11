@@ -8,27 +8,46 @@
   <title>JosueOb</title>
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-    <!--Script-->
+  <!--Script-->
   <script src="../app.js"></script>
 
 </head>
 
-<body class="bg-gray-100 dark:bg-dark-background font-custom antialiased">
+<body>
   <!--Navbar - Navigation-->
-  <nav x-data="{ open:false }"
-    class="sticky top-0 z-50 bg-white dark:bg-secondary-blue border-b border-gray-100 dark:border-gray-800">
-    <div class="flex justify-between max-w-7xl  mx-auto h-16 px-4 sm:px-6 lg:px-8">
-      <!--Logo-->
-      <div class="flex items-center">
-        <a class="flex items-center" href="#">
-          <img class="h-12 w-auto md:mr-2" src="svg/logo.svg" alt="Logo - JosueOb">
-          <h1 class="hidden md:flex text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg focus:outline-none focus:shadow-outline">Josué Obaco</h1>
-        </a>
+  <nav x-data="{ open:false }" class="navbar-wrap">
+    <!--Primary navigation menu-->
+    <div class="navbar-primary">
+      <!--Header-->
+      <a class="navbar-header" href="#">
+        <img class="navbar-header-logo" src="svg/logo.svg" alt="Logo - JosueOb">
+        <h1 class="navbar-header-title">Josué Obaco</h1>
+      </a>
+      <!--Navigations links-->
+      <div class="navbar-links ">
+        <a class="navbar-link-active" href="#">Inicio</a>
+        <a class="navbar-link" href="#">Experiencia</a>
+        <a class="navbar-link" href="#">Educación</a>
+        <a class="navbar-link" href="#">Portafolio</a>
+        <a class="navbar-link" href="#">Habilidades</a>
+        <a class="navbar-link" href="#">Referencias</a>
       </div>
-      <!--Options-->
-      <div>Opciones</div>
+      <!--Hamburger-->
+      <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
+        <i x-show="!open" class="bi bi-caret-down-fill navbar-caret-toggle"></i>
+        <i x-show="open" class="bi bi-caret-up-fill navbar-caret-toggle"></i>
+      </button>
     </div>
 
+    <!--Responsive navigation menu-->
+    <div :class="{ 'block': open, 'hidden': !open}" class="block md:hidden space-y-1">
+      <a class="responsive-navbar-link-active" href="#">Inicio</a>
+      <a class="responsive-navbar-link" href="#">Experiencia</a>
+      <a class="responsive-navbar-link" href="#">Educación</a>
+      <a class="responsive-navbar-link" href="#">Portafolio</a>
+      <a class="responsive-navbar-link" href="#">Habilidades</a>
+      <a class="responsive-navbar-link" href="#">Referencias</a>
+    </div>
   </nav>
 </body>
 

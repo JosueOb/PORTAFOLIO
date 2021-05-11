@@ -444,8 +444,9 @@ id) /*: string*/
 },{}],"6fOLN":[function(require,module,exports) {
 require("./css/tailwind.css");
 require("alpinejs");
+require("bootstrap-icons/font/bootstrap-icons.css");
 
-},{"./css/tailwind.css":"5RjRl","alpinejs":"6FzE9"}],"5RjRl":[function() {},{}],"6FzE9":[function(require,module,exports) {
+},{"./css/tailwind.css":"5RjRl","alpinejs":"6FzE9","bootstrap-icons/font/bootstrap-icons.css":"2HbYt"}],"5RjRl":[function() {},{}],"6FzE9":[function(require,module,exports) {
 var define;
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() : typeof define === 'function' && define.amd ? define(factory) : (global = global || self, global.Alpine = factory());
@@ -2184,6 +2185,6 @@ var define;
   return Alpine;
 });
 
-},{}]},["TXL6J","6fOLN"], "6fOLN", "parcelRequireaa6a")
+},{}],"2HbYt":[function() {},{}]},["TXL6J","6fOLN"], "6fOLN", "parcelRequireaa6a")
 
 //# sourceMappingURL=index.29405c31.js.map

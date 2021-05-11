@@ -11,7 +11,12 @@ module.exports = {
         'secondary-blue': '#344955',
         'tertiary-blue': '#232F34',
         'primary-orange': '#F9AA33',
-        'dark-background': '#F9AA33'
+        'secondary-orange': '#ffd942',
+        'tertiary-orange': '#fdeb5d',
+        'quaternary-orange': '#fff9c6',
+        'primary-dark': '#121212',
+        'secondary-dark': '#1e1e1e',
+        'tertiary-dark': '#212121'
       }
     },
   },

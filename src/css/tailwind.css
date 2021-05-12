@@ -3,7 +3,7 @@
 
 /*Navbar*/
 .navbar-wrap {
-    @apply  sticky top-0 z-50 bg-white dark:bg-secondary-dark border-b border-gray-100 dark:border-tertiary-dark;
+    @apply  sticky top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm dark:border-tertiary-dark;
 }
 .navbar-primary {
     @apply flex justify-between items-center max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8;

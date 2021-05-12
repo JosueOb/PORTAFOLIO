@@ -2,19 +2,19 @@
   "name": "PORTAFOLIO-WEB",
   "version": "1.0.0",
   "description": "Portafolio web",
-  "main": "index.html",
   "scripts": {
-    "start": "parcel src/index.html  --dist-dir=docs --no-cache --public-url ./",
-    "build": "parcel build --no-cache --no-source-maps src/index.html"
+    "tailwind": "postcss build src/css/tailwind.css -o dist/app.css",
+    "start": "parcel src/js/app.js --no-source-maps --no-cache",
+    "build": "parcel build src/js/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
-    "parcel": "^2.0.0-nightly.651",
-    "postcss": "^8.2.10",
-    "tailwindcss": "^2.1.1"
+    "parcel": "^2.0.0-nightly.655",
+    "postcss": "^8.2.15",
+    "tailwindcss": "^2.1.2"
   },
   "dependencies": {
     "alpinejs": "^2.8.2",

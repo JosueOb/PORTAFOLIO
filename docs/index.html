@@ -2,53 +2,86 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JosueOb</title>
-  <!-- Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-  <!--Script-->
-  <link rel="stylesheet" href="index.9b892477.css"><script src="index.29405c31.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JosueOb</title>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
 
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.removeItem('theme');
+        }
+    </script>
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+    <!--Styles-->
+    <link rel="stylesheet" href="../dist/app.css">
+    <!--Scripts-->
+    <script src="../dist/app.js"></script>
 </head>
 
 <body>
-  <!--Navbar - Navigation-->
-  <nav x-data="{ open:false }" class="navbar-wrap">
-    <!--Primary navigation menu-->
-    <div class="navbar-primary">
-      <!--Header-->
-      <a class="navbar-header" href="#">
-        <img class="navbar-header-logo" src="logo.9b10f545.svg" alt="Logo - JosueOb">
-        <h1 class="navbar-header-title">Josué Obaco</h1>
-      </a>
-      <!--Navigations links-->
-      <div class="navbar-links ">
-        <a class="navbar-link-active" href="#">Inicio</a>
-        <a class="navbar-link" href="#">Experiencia</a>
-        <a class="navbar-link" href="#">Educación</a>
-        <a class="navbar-link" href="#">Portafolio</a>
-        <a class="navbar-link" href="#">Habilidades</a>
-        <a class="navbar-link" href="#">Referencias</a>
-      </div>
-      <!--Hamburger-->
-      <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
-        <i x-show="!open" class="bi bi-caret-down-fill navbar-caret-toggle"></i>
-        <i x-show="open" class="bi bi-caret-up-fill navbar-caret-toggle"></i>
-      </button>
-    </div>
+    <!--Navbar - Navigation-->
+    <nav x-data="{ open:false, dark:false, ...ThemeMode()}" class="navbar-wrap">
+        <!--Primary navigation menu-->
+        <div class="navbar-primary">
+            <!--Header-->
+            <a class="navbar-header" href="#">
+                <img class="navbar-header-logo" src="img/logo.svg" alt="Logo - JosueOb">
+                <h1 class="navbar-header-title">Josué Obaco</h1>
+            </a>
+            <!--switch dark mode-->
+            <button title="Dark mode" type="button" class="bg-blue-200 h-12 w-12" @click="setTheme()">
+                <i x-show="!dark" class="bi bi-sun-fill text-xl"></i>
+                <i x-show="dark" class="bi bi-moon-fill text-xl"></i>
+            </button>
+            <!--Navigations links-->
+            <div class="navbar-links">
+                <a class="navbar-link-active" href="#">Inicio</a>
+                <a class="navbar-link" href="#">Experiencia</a>
+                <a class="navbar-link" href="#">Educación</a>
+                <a class="navbar-link" href="#">Portafolio</a>
+                <a class="navbar-link" href="#">Habilidades</a>
+                <a class="navbar-link" href="#">Referencias</a>
+            </div>
+            <!--Hamburger-->
+            <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
+                <i x-show="!open" class="bi bi-caret-down-fill navbar-caret-toggle"></i>
+                <i x-show="open" class="bi bi-caret-up-fill navbar-caret-toggle"></i>
+            </button>
+        </div>
+        <!--Responsive navigation menu-->
+        <div :class="{ 'block': open, 'hidden': !open}" class="block md:hidden space-y-1">
+            <a class="responsive-navbar-link-active" href="#">Inicio</a>
+            <a class="responsive-navbar-link" href="#">Experiencia</a>
+            <a class="responsive-navbar-link" href="#">Educación</a>
+            <a class="responsive-navbar-link" href="#">Portafolio</a>
+            <a class="responsive-navbar-link" href="#">Habilidades</a>
+            <a class="responsive-navbar-link" href="#">Referencias</a>
+        </div>
+    </nav>
 
-    <!--Responsive navigation menu-->
-    <div :class="{ 'block': open, 'hidden': !open}" class="block md:hidden space-y-1">
-      <a class="responsive-navbar-link-active" href="#">Inicio</a>
-      <a class="responsive-navbar-link" href="#">Experiencia</a>
-      <a class="responsive-navbar-link" href="#">Educación</a>
-      <a class="responsive-navbar-link" href="#">Portafolio</a>
-      <a class="responsive-navbar-link" href="#">Habilidades</a>
-      <a class="responsive-navbar-link" href="#">Referencias</a>
-    </div>
-  </nav>
+    <script>
+        function ThemeMode() {
+            return {
+                dark: false,
+                setTheme: function () {
+                    var theme = document.querySelector('html').classList;
+                    if (localStorage.theme == 'dark') {
+                        theme.remove('dark');
+                        localStorage.removeItem('theme');
+                    } else {
+                        theme.add('dark');
+                        localStorage.theme = 'dark'
+                    }
+                },
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+//Script para cambiar el tema/modo de forma manual
 function ThemeMode() {
     return {
         dark: false,

@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 
-/*Navbar*/
+/*Navbar - Menú de navegación*/
 .navbar-wrap {
     @apply  sticky top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm dark:border-tertiary-dark;
 }

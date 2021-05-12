@@ -1,7 +1,7 @@
 {
   "name": "PORTAFOLIO_WEB",
   "version": "1.0.0",
-  "description": "portafolio web para presentación personal y proyectos realizados.",
+  "description": "portafolio web para la presentación de proyectos realizados e información académica y de contacto.",
   "scripts": {
     "tailwind-build": "postcss build src/css/tailwind.css -o dist/app.css",
     "parcel-start": "parcel src/js/app.js --no-source-maps --no-cache",

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="281.145 264.059 546.183 346.014" overflow="hidden" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clip0">
+      <rect x="-220" y="-61" width="1118" height="982"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip0)" transform="matrix(1, 0, 0, 1, 220, 61)">
+    <text fill="#121212" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-weight="400" font-size="467" transform="translate(60.4311 544)" style="white-space: pre;">J<tspan font-weight="700" font-size="200" x="162.266" y="-189">O</tspan></text>
+    <text fill="#F9AA33" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-weight="700" font-size="200" transform="matrix(-1 1.22465e-16 -1.22465e-16 -1 376.697 370)" style="white-space: pre;">O</text>
+    <text fill="#F9AA33" font-family="Tahoma,Tahoma_MSFontService,sans-serif" font-weight="400" font-size="467" transform="translate(342.518 544)" style="white-space: pre;">B</text>
+  </g>
+</svg>

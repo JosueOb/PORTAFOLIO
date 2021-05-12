@@ -6,27 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JosueOb</title>
-    <script>
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            localStorage.theme = 'dark';
-
-        } else {
-            document.documentElement.classList.remove('dark');
-            localStorage.removeItem('theme');
-        }
-    </script>
     <!-- Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
     <!--Styles-->
     <link rel="stylesheet" href="../dist/app.css">
     <!--Scripts-->
     <script src="../dist/app.js"></script>
+    <script src="js/local_storage_theme.js"></script>
 </head>
 
 <body>
     <!--Navbar - Navigation-->
-    <nav x-data="{ open:false, dark:false, ...ThemeMode()}" class="navbar-wrap">
+    <nav x-data="{ open:false, dark:false, ...ThemeMode()}" x-init="setIcon()" class="navbar-wrap">
         <!--Primary navigation menu-->
         <div class="navbar-primary">
             <!--Header-->
@@ -35,9 +26,10 @@
                 <h1 class="navbar-header-title">Josué Obaco</h1>
             </a>
             <!--switch dark mode-->
-            <button title="Dark mode" type="button" class="bg-blue-200 h-12 w-12" @click="setTheme()">
-                <i x-show="!dark" class="bi bi-sun-fill text-xl"></i>
-                <i x-show="dark" class="bi bi-moon-fill text-xl"></i>
+            <button title="Dark mode" type="button" :class="{ 'bg-tertiary-dark border-primary-dark': dark }"
+                class="h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-gray-50" @click="setTheme()">
+                <i x-show="dark" class="bi bi-sun-fill text-xl text-primary-orange"></i>
+                <i x-show="!dark" class="bi bi-moon-fill text-xl text-primary-dark"></i>
             </button>
             <!--Navigations links-->
             <div class="navbar-links">
@@ -65,23 +57,7 @@
         </div>
     </nav>
 
-    <script>
-        function ThemeMode() {
-            return {
-                dark: false,
-                setTheme: function () {
-                    var theme = document.querySelector('html').classList;
-                    if (localStorage.theme == 'dark') {
-                        theme.remove('dark');
-                        localStorage.removeItem('theme');
-                    } else {
-                        theme.add('dark');
-                        localStorage.theme = 'dark'
-                    }
-                },
-            }
-        }
-    </script>
+    <script src="js/theme_mode.js"></script>
 </body>
 
 </html>

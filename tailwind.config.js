@@ -16,7 +16,8 @@ module.exports = {
         'quaternary-orange': '#fff9c6',
         'primary-dark': '#121212',
         'secondary-dark': '#1e1e1e',
-        'tertiary-dark': '#212121'
+        'tertiary-dark': '#212121',
+        'quarternary-dark': '#272727'
       }
     },
   },

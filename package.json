@@ -1,14 +1,14 @@
 {
-  "name": "PORTAFOLIO-WEB",
+  "name": "PORTAFOLIO_WEB",
   "version": "1.0.0",
-  "description": "Portafolio web",
+  "description": "portafolio web para presentación personal y proyectos realizados.",
   "scripts": {
-    "tailwind": "postcss build src/css/tailwind.css -o dist/app.css",
-    "start": "parcel src/js/app.js --no-source-maps --no-cache",
-    "build": "parcel build src/js/app.js"
+    "tailwind-build": "postcss build src/css/tailwind.css -o dist/app.css",
+    "parcel-start": "parcel src/js/app.js --no-source-maps --no-cache",
+    "parcel-build": "parcel build src/js/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Josué Obaco",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.2.5",

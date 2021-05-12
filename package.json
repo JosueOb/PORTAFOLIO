@@ -5,7 +5,7 @@
   "scripts": {
     "tailwind-build": "postcss build src/css/tailwind.css -o dist/app.css",
     "parcel-start": "parcel src/js/app.js --no-source-maps --no-cache",
-    "parcel-build": "parcel build src/js/app.js"
+    "parcel-build": "parcel build src/js/app.js  --dist-dir docs/dist"
   },
   "keywords": [],
   "author": "Josué Obaco",

@@ -38,7 +38,15 @@
 .responsive-navbar-link {
     @apply block pl-8 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-primary-orange hover:text-primary-dark hover:bg-gray-50 dark:hover:bg-quaternary-orange hover:border-gray-400 dark:hover:border-tertiary-orange focus:outline-none transition duration-150 ease-in-out;
 }
-
+.switch-theme-light {
+    @apply h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-gray-50;
+}
+.switch-theme-dark {
+    @apply bg-tertiary-dark border-primary-dark;
+}
+.switch-theme-icon {
+    @apply text-xl;
+}
 @tailwind utilities;
 
 body {

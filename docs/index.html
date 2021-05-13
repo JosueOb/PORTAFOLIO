@@ -29,10 +29,10 @@
                 <h1 class="navbar-header-title">Josué Obaco</h1>
             </a>
             <!--dark mode switch-->
-            <button title="Dark mode" type="button" :class="{ 'bg-tertiary-dark border-primary-dark': dark }"
-                class="h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-gray-50" @click="setTheme()">
-                <i x-show="dark" class="bi bi-sun-fill text-xl text-primary-orange"></i>
-                <i x-show="!dark" class="bi bi-moon-fill text-xl text-primary-dark"></i>
+            <button title="Dark mode" type="button" :class="{ 'switch-theme-dark': dark }"
+                class="switch-theme-light" @click="setTheme()">
+                <i x-show="dark" class="bi bi-sun-fill switch-theme-icon text-primary-orange"></i>
+                <i x-show="!dark" class="bi bi-moon-fill switch-theme-icon text-primary-dark"></i>
             </button>
             <!--Navigations links-->
             <div class="navbar-links">
@@ -59,6 +59,7 @@
             <a class="responsive-navbar-link" href="#">Referencias</a>
         </div>
     </nav>
+
 
     <script src="js/theme_mode.js"></script>
 </body>

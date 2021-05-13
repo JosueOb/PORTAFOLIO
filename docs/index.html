@@ -15,53 +15,79 @@
     <!--Scripts-->
     <script src="dist/app.js"></script>
     <script src="js/local_storage_theme.js"></script>
+    <script>
+    </script>
 </head>
 
 <body>
-    <!--Navbar - Navigation-->
-    <nav x-data="{ open:false, dark:false, ...ThemeMode()}" x-init="setIcon()" class="navbar-wrap">
-        <!--Primary navigation menu-->
-        <div class="navbar-primary">
-            <!--Header-->
-            <a class="navbar-header" href="#">
-                <img x-show="!dark" class="navbar-header-logo" src="img/logo-2.png" alt="Logo - JosueOb">
-                <img x-show="dark" class="navbar-header-logo" src="img/logo-2-dark.png" alt="Logo Dark - JosueOb">
-                <h1 class="navbar-header-title">Josué Obaco</h1>
-            </a>
-            <!--dark mode switch-->
-            <button title="Dark mode" type="button" :class="{ 'switch-theme-dark': dark }"
-                class="switch-theme-light" @click="setTheme()">
-                <i x-show="dark" class="bi bi-sun-fill switch-theme-icon text-primary-orange"></i>
-                <i x-show="!dark" class="bi bi-moon-fill switch-theme-icon text-primary-dark"></i>
-            </button>
-            <!--Navigations links-->
-            <div class="navbar-links">
-                <a class="navbar-link-active" href="#">Inicio</a>
-                <a class="navbar-link" href="#">Experiencia</a>
-                <a class="navbar-link" href="#">Educación</a>
-                <a class="navbar-link" href="#">Portafolio</a>
-                <a class="navbar-link" href="#">Habilidades</a>
-                <a class="navbar-link" href="#">Referencias</a>
+    <header>
+        <!--Navbar - Navigation-->
+        <nav x-data="{ open:false, dark:false, ...ThemeMode(), ...switchSection()}" x-init="setIcon(), defaultSection()"
+            class="navbar-wrap">
+            <!--Primary navigation menu-->
+            <div class="navbar-primary">
+                <!--Header-->
+                <a class="navbar-header" href="#first-secction" @click="section = 'home'">
+                    <img x-show="!dark" class="navbar-header-logo" src="img/logo-2.png" alt="Logo - JosueOb">
+                    <img x-show="dark" class="navbar-header-logo" src="img/logo-2-dark.png" alt="Logo Dark - JosueOb">
+                    <h1 class="navbar-header-title">Josué Obaco</h1>
+                </a>
+                <!--dark mode switch-->
+                <button title="Dark mode" type="button" :class="{ 'switch-theme-dark': dark }"
+                    class="switch-theme-light" @click="setTheme()">
+                    <i x-show="dark" class="bi bi-sun-fill switch-theme-icon text-primary-orange"></i>
+                    <i x-show="!dark" class="bi bi-moon-fill switch-theme-icon text-primary-dark"></i>
+                </button>
+                <!--Navigations links-->
+                <div class="navbar-links" id="navbar-links">
+                    <a :class="{ 'navbar-link-active': isSelectedSection('home')}" class="navbar-link" href="#home"
+                        @click="setSection('home')">Inicio</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('experience') }" class="navbar-link"
+                        href="#experience" @click="setSection('experience')">Experiencia</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('education') }" class="navbar-link"
+                        href="#education" @click="setSection('education')">Educación</a>
+                    <a class="navbar-link" href="#">Portafolio</a>
+                    <a class="navbar-link" href="#">Habilidades</a>
+                    <a class="navbar-link" href="#">Referencias</a>
+                </div>
+                <!--Hamburger-->
+                <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
+                    <i x-show="!open" class="bi bi-caret-down-fill navbar-caret-toggle"></i>
+                    <i x-show="open" class="bi bi-caret-up-fill navbar-caret-toggle"></i>
+                </button>
             </div>
-            <!--Hamburger-->
-            <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
-                <i x-show="!open" class="bi bi-caret-down-fill navbar-caret-toggle"></i>
-                <i x-show="open" class="bi bi-caret-up-fill navbar-caret-toggle"></i>
-            </button>
-        </div>
-        <!--Responsive navigation menu-->
-        <div :class="{ 'block': open, 'hidden': !open}" class="block md:hidden space-y-1">
-            <a class="responsive-navbar-link-active" href="#">Inicio</a>
-            <a class="responsive-navbar-link" href="#">Experiencia</a>
-            <a class="responsive-navbar-link" href="#">Educación</a>
-            <a class="responsive-navbar-link" href="#">Portafolio</a>
-            <a class="responsive-navbar-link" href="#">Habilidades</a>
-            <a class="responsive-navbar-link" href="#">Referencias</a>
-        </div>
-    </nav>
+            <!--Responsive navigation menu-->
+            <div :class="{ 'block': open, 'hidden': !open}" class="block md:hidden space-y-1"
+                id="reponsive-navbar-links">
+                <a :class="{ 'responsive-navbar-link-active': section === 'home' }" class="responsive-navbar-link"
+                    href="#home" @click="section = 'home', open = false">Inicio</a>
+                <a :class="{ 'responsive-navbar-link-active': section === 'experience' }" class="responsive-navbar-link"
+                    href="#experience" @click="section = 'experience',  open = false">Experiencia</a>
+                <a :class="{ 'responsive-navbar-link-active': section === 'education' }" class="responsive-navbar-link"
+                    href="#education" @click="section = 'education',  open = false">Educación</a>
+                <a class="responsive-navbar-link" href="#">Portafolio</a>
+                <a class="responsive-navbar-link" href="#">Habilidades</a>
+                <a class="responsive-navbar-link" href="#">Referencias</a>
+            </div>
+        </nav>
+    </header>
 
+    <main>
+        <!--Hero-->
+        <div class="bg-red-500 w-full h-96 min-h-screen" id="home">
+            <img src="img/logo.png" class="opacity-10">
+            <p>Primer slide,</p>
+        </div>
+        <div class="bg-blue-700 w-full h-screen" id="experience">
+            <p>Segundo slide,</p>
+        </div>
+        <div class="bg-yellow-700 w-full h-screen" id="education">
+            <p>Tercer slide,</p>
+        </div>
+    </main>
 
     <script src="js/theme_mode.js"></script>
+    <script src="js/switch_section.js"></script>
 </body>
 
 </html>

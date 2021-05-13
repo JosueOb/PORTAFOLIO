@@ -3,7 +3,7 @@
 
 /*Navbar - Menú de navegación*/
 .navbar-wrap {
-    @apply  sticky top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm dark:border-tertiary-dark;
+    @apply  fixed w-full top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm dark:border-tertiary-dark;
 }
 .navbar-primary {
     @apply flex justify-between items-center max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8;
@@ -21,7 +21,7 @@
     @apply h-16 hidden md:flex space-x-2 lg:space-x-5 whitespace-nowrap;
 }
 .navbar-link-active {
-    @apply inline-flex items-center px-1 pt-1 border-b-2 border-primary-dark dark:border-white text-sm font-medium leading-5 text-primary-dark  dark:text-primary-orange focus:outline-none;
+    @apply  border-primary-dark dark:border-white  text-primary-dark  dark:text-primary-orange !important;
 }
 .navbar-link {
     @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-secondary-orange hover:text-primary-dark dark:hover:text-primary-orange hover:border-gray-400 dark:hover:border-gray-600 focus:outline-none transition duration-150 ease-in-out;
@@ -33,11 +33,12 @@
     @apply text-3xl dark:text-white;
 }
 .responsive-navbar-link-active {
-    @apply block pl-8 pr-4 py-2 border-l-4 border-primary-dark dark:border-primary-orange text-base font-medium text-primary-dark bg-gray-100 dark:bg-secondary-orange focus:outline-none transition duration-150 ease-in-out;
+    @apply border-primary-dark dark:border-primary-orange text-primary-dark bg-gray-100 dark:bg-secondary-orange !important;
 }
 .responsive-navbar-link {
     @apply block pl-8 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-primary-orange hover:text-primary-dark hover:bg-gray-50 dark:hover:bg-quaternary-orange hover:border-gray-400 dark:hover:border-tertiary-orange focus:outline-none transition duration-150 ease-in-out;
 }
+/*Switch para el cambiar el modo de presntación Dark o Light*/
 .switch-theme-light {
     @apply h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-gray-50;
 }
@@ -47,8 +48,12 @@
 .switch-theme-icon {
     @apply text-xl;
 }
+
 @tailwind utilities;
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     @apply bg-gray-100 dark:bg-primary-dark font-custom antialiased;
 }

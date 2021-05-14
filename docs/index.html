@@ -15,8 +15,6 @@
     <!--Scripts-->
     <script src="dist/app.js"></script>
     <script src="js/local_storage_theme.js"></script>
-    <script>
-    </script>
 </head>
 
 <body>
@@ -27,7 +25,7 @@
             <!--Primary navigation menu-->
             <div class="navbar-primary">
                 <!--Header-->
-                <a class="navbar-header" href="#first-secction" @click="section = 'home'">
+                <a class="navbar-header" href="#home" @click="setSection('home')">
                     <img x-show="!dark" class="navbar-header-logo" src="img/logo-2.png" alt="Logo - JosueOb">
                     <img x-show="dark" class="navbar-header-logo" src="img/logo-2-dark.png" alt="Logo Dark - JosueOb">
                     <h1 class="navbar-header-title">Josué Obaco</h1>
@@ -74,14 +72,14 @@
 
     <main>
         <!--Hero-->
-        <div class="bg-red-500 w-full h-96 min-h-screen" id="home">
+        <div class="bg-red-500 w-full h-96 min-h-screen section" id="home">
             <img src="img/logo.png" class="opacity-10">
             <p>Primer slide,</p>
         </div>
-        <div class="bg-blue-700 w-full h-screen" id="experience">
+        <div class="bg-blue-700 w-full h-screen section" id="experience">
             <p>Segundo slide,</p>
         </div>
-        <div class="bg-yellow-700 w-full h-screen" id="education">
+        <div class="bg-yellow-700 w-full h-screen section" id="education">
             <p>Tercer slide,</p>
         </div>
     </main>

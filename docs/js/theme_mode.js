@@ -16,7 +16,7 @@ function ThemeMode() {
                     localStorage.theme = 'dark'
                     this.dark = true;
                 }
-                
+
             } else {
                 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     htmlSelector.remove('dark');

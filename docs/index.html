@@ -33,8 +33,8 @@
                 <!--dark mode switch-->
                 <button title="Dark mode" type="button" :class="{ 'switch-theme-dark': dark }"
                     class="switch-theme-light" @click="setTheme()">
-                    <i x-show="dark" class="bi bi-sun-fill switch-theme-icon text-primary-orange"></i>
-                    <i x-show="!dark" class="bi bi-moon-fill switch-theme-icon text-primary-dark"></i>
+                    <i x-show="dark" class="bi bi-sun-fill switch-theme-icon"></i>
+                    <i x-show="!dark" class="bi bi-moon-fill switch-theme-icon"></i>
                 </button>
                 <!--Navigations links-->
                 <div class="navbar-links" id="navbar-links">
@@ -78,12 +78,9 @@
                 <div class="info">
                     <h2 class="info-title">
                         Desarrollador web</h2>
-                    <p class="info-description">programador
-                        web
-                        con más de dos años de experiencia trabajando en proyectos de
-                        aplicaciones web, utilizando diversos frameworks y tecnologías para su desarrollo, ya sea
-                        orientado
-                        al cliente (frontend) como también del lado del servidor (backend).</p>
+                    <p class="info-description">Soy programador web con más de dos años de experiencia trabajando en
+                        proyectos de aplicaciones web, utilizando diversos frameworks y tecnologías para su desarrollo,
+                        ya sea orientado al cliente (frontend) como también del lado del servidor (backend).</p>
                     <a class="show-cv">Visualizar
                         CV</a>
                     <!--Social media-->
@@ -100,27 +97,24 @@
                 <!--Photos-->
                 <div class="photo-wrap">
                     <div class="photos">
-                        <img class="w-3/12 h-auto" src="img/hero1.png">
-
-                        <img class="w-6/12 h-auto" src="img/hero2.png">
-
-                        <img class="w-3/12 h-auto" src="img/hero3.png">
+                        <img class="w-3/12 h-auto" src="img/hero1.png" alt="JosueOb - Hero photo 1">
+                        <img class="w-6/12 h-auto" src="img/hero2.png" alt="JosueOb - Hero photo 2">
+                        <img class="w-3/12 h-auto" src="img/hero3.png" alt="JosueOb - Hero photo 3">
                     </div>
                 </div>
                 <!--Next section-->
                 <div class="next-section-wrap">
                     <div class="next-section-position">
-                        <a href="#experience" class="inline-flex">
-                            <i class="bi bi-chevron-compact-down next-section-icon"></i>
-                        </a>
+                        <a href="#experience" class="inline-flex"><i
+                                class="bi bi-chevron-compact-down next-section-icon"></i></a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--Experience section-->
-        <div class="bg-indigo-700 w-full h-screen section  pt-16" id="experience">
-            <p>experience</p>
+        <div class="w-full h-screen section  pt-16" id="experience">
+            <p>Experience</p>
         </div>
 
         <div class="bg-yellow-700 w-full h-screen section  pt-16" id="education">

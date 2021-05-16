@@ -3,7 +3,7 @@
 
 /*Navbar - Menú de navegación*/
 .navbar-wrap {
-    @apply  fixed w-full top-0 z-50 bg-white dark:bg-secondary-dark shadow-sm dark:border-tertiary-dark;
+    @apply  fixed w-full top-0 z-50 border-b border-light-backgound bg-light-surface dark:bg-dark-surface dark:border-dark-background;
 }
 .navbar-primary {
     @apply flex justify-between items-center max-w-7xl mx-auto h-16 px-4 sm:px-6 lg:px-8;
@@ -21,10 +21,10 @@
     @apply h-16 hidden md:flex space-x-2 lg:space-x-5 whitespace-nowrap;
 }
 .navbar-link-active {
-    @apply  border-primary-dark dark:border-white  text-primary-dark  dark:text-primary-orange !important;
+    @apply  border-primary-dark text-primary-dark dark:border-primary-orange dark:text-primary-orange !important;
 }
 .navbar-link {
-    @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 dark:text-secondary-orange hover:text-primary-dark dark:hover:text-primary-orange hover:border-gray-400 dark:hover:border-gray-600 focus:outline-none transition duration-150 ease-in-out;
+    @apply inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-primary-dark hover:border-gray-400 focus:outline-none dark:hover:border-secondary-orange dark:text-white dark:hover:text-secondary-orange;
 }
 .navbar-caret {
     @apply flex h-12 w-12 items-center justify-center md:hidden focus:outline-none;
@@ -33,33 +33,33 @@
     @apply text-3xl dark:text-white;
 }
 .responsive-navbar-link-active {
-    @apply border-primary-dark dark:border-primary-orange text-primary-dark bg-gray-100 dark:bg-secondary-orange !important;
+    @apply border-primary-dark text-primary-dark bg-gray-100 dark:bg-primary-orange dark:border-secondary-orange !important;
 }
 .responsive-navbar-link {
-    @apply block pl-8 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 dark:text-primary-orange hover:text-primary-dark hover:bg-gray-50 dark:hover:bg-quaternary-orange hover:border-gray-400 dark:hover:border-tertiary-orange focus:outline-none transition duration-150 ease-in-out;
+    @apply block pl-8 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-primary-dark hover:bg-gray-50 hover:border-gray-400 focus:outline-none dark:text-white dark:hover:bg-secondary-orange dark:hover:border-primary-orange dark:hover:text-primary-dark;
 }
 /*Switch para el cambiar el modo de presntación Dark o Light*/
 .switch-theme-light {
-    @apply h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-gray-50;
+    @apply h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-light-backgound;
 }
 .switch-theme-dark {
-    @apply bg-tertiary-dark border-primary-dark;
+    @apply bg-dark-background border-dark-surface;
 }
 .switch-theme-icon {
-    @apply text-xl;
+    @apply text-xl text-primary-dark dark:text-primary-orange;
 }
 /*Hero*/
 .hero {
-    @apply h-full min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 bg-white dark:bg-black pb-10 md:pb-12;
+    @apply h-full min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 bg-light-surface pb-10 md:pb-12 dark:bg-dark-surface;
 }
 .info {
-    @apply w-full md:w-7/12 lg:w-1/2 text-center px-6 py-5 lg:px-16 space-y-4;
+    @apply w-full md:w-7/12 lg:w-1/2 text-center px-6 py-5 lg:px-16 space-y-5;
 }
 .info-title {
-    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold text-primary-dark dark:text-white tracking-wide;
+    @apply text-3xl lg:text-4xl xl:text-5xl font-semibold text-primary-dark tracking-wide dark:text-white;
 }
 .info-description {
-    @apply text-sm text-gray-500 lg:text-base md:text-left dark:text-gray-300;
+    @apply text-sm text-gray-500 md:text-base md:text-left dark:text-gray-300;
 }
 .show-cv {
     @apply inline-block text-sm uppercase font-bold tracking-wider rounded py-2 px-4 border border-primary-dark bg-transparent hover:border-transparent hover:bg-primary-dark hover:text-white dark:border-primary-orange dark:text-primary-orange dark:hover:bg-secondary-orange dark:hover:text-primary-dark dark:hover:border-transparent;
@@ -83,7 +83,7 @@
     @apply flex justify-center;
 }
 .next-section-icon {
-    @apply text-primary-dark dark:text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-bounce;
+    @apply text-primary-dark dark:text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-bounce hover:text-primary-orange dark:hover:text-secondary-orange;
 }
 
 @tailwind utilities;
@@ -92,5 +92,5 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    @apply bg-gray-100 dark:bg-primary-dark font-custom antialiased;
+    @apply bg-light-backgound dark:bg-dark-background font-custom antialiased;
 }

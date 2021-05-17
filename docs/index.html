@@ -44,7 +44,8 @@
                         href="#experience" @click="setSection('experience')">Experiencia</a>
                     <a :class="{ 'navbar-link-active': isSelectedSection('education') }" class="navbar-link"
                         href="#education" @click="setSection('education')">Educación</a>
-                    <a class="navbar-link" href="#">Portafolio</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('portfolio') }" class="navbar-link"
+                        href="#portfolio" @click="setSection('portfolio')">Portafolio</a>
                     <a class="navbar-link" href="#">Habilidades</a>
                     <a class="navbar-link" href="#">Referencias</a>
                 </div>
@@ -63,7 +64,8 @@
                     href="#experience" @click="section = 'experience',  open = false">Experiencia</a>
                 <a :class="{ 'responsive-navbar-link-active': section === 'education' }" class="responsive-navbar-link"
                     href="#education" @click="section = 'education',  open = false">Educación</a>
-                <a class="responsive-navbar-link" href="#">Portafolio</a>
+                <a :class="{ 'responsive-navbar-link-active': section === 'portfolio' }" class="responsive-navbar-link"
+                    href="#portfolio" @click="section = 'portfolio',  open = false">Portafolio</a>
                 <a class="responsive-navbar-link" href="#">Habilidades</a>
                 <a class="responsive-navbar-link" href="#">Referencias</a>
             </div>
@@ -176,7 +178,64 @@
             </div>
         </div>
 
-        
+        <!--Education section-->
+        <div class="section  pt-16" id="education">
+            <!--Timeline-->
+            <div class="timeline-wrap lg:flex-row-reverse">
+                <!--Header-->
+                <div class="timeline-header">
+                    <h2 class="timeline-header-title lg:text-right">Formación Académica<h2>
+                            <p class="timeline-header-description lg:text-right">Listado de mi preparación académica.
+                            </p>
+                </div>
+                <!--Content-->
+                <div class="timeline-content">
+                    <!--Lines-->
+                    <div class="timeline-division-line-wrap">
+                        <div class="timeline-division-lines">
+                            <span class="timeline-first-line"></span>
+                            <span class="timeline-second-line"></span>
+                        </div>
+                    </div>
+                    <!--Items-->
+                    <div class="timeline-items">
+                        <!--First item-->
+                        <div class="timeline-left-item-wrap">
+                            <div class="timeline-aux-item"></div>
+                            <div class="timeline-left-item-content">
+                                <p class="timeline-item-date">Quito – Ecuador, octubre 2020</p>
+                                <h4 class="timeline-item-title">Escuela Politécnica Nacional</h4>
+                                <p class="timeline-item-description">Tecnólogo en Análisis de Sistemas Informáticos</p>
+                            </div>
+                        </div>
+                        <!--Second item-->
+                        <div class="timeline-right-item-wrap">
+                            <div class="timeline-aux-item"></div>
+                            <div class="timeline-right-item-content">
+                                <p class="timeline-item-date">Quito – Ecuador, julio 2018</p>
+                                <h4 class="timeline-item-title">Centro de Educación Continua - EPN</h4>
+                                <p class="timeline-item-description">Suficiencia en el idioma inglés</p>
+                            </div>
+                        </div>
+                        <!--Third item-->
+                        <div class="timeline-left-item-wrap">
+                            <div class="timeline-aux-item"></div>
+                            <div class="timeline-left-item-content">
+                                <p class="timeline-item-date">Quito – Ecuador, julio 2014</p>
+                                <h4 class="timeline-item-title">Instituto Nacional Mejía</h4>
+                                <p class="timeline-item-description">Bachiller en Ciencias – Físico Matemático</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Portfolio section-->
+        <div class="section pt-16 min-h-screen h-96 w-full" id="portfolio">
+            <h2>Portafolio</h2>
+        </div>
+
     </main>
 
     <script src="js/theme_mode.js"></script>

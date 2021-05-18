@@ -46,6 +46,7 @@
                         href="#education" @click="setSection('education')">Educación</a>
                     <a :class="{ 'navbar-link-active': isSelectedSection('portfolio') }" class="navbar-link"
                         href="#portfolio" @click="setSection('portfolio')">Portafolio</a>
+                    <a class="navbar-link" href="#">Servicios</a>
                     <a class="navbar-link" href="#">Habilidades</a>
                     <a class="navbar-link" href="#">Referencias</a>
                 </div>
@@ -66,6 +67,7 @@
                     href="#education" @click="section = 'education',  open = false">Educación</a>
                 <a :class="{ 'responsive-navbar-link-active': section === 'portfolio' }" class="responsive-navbar-link"
                     href="#portfolio" @click="section = 'portfolio',  open = false">Portafolio</a>
+                <a class="responsive-navbar-link" href="#">Servicios</a>
                 <a class="responsive-navbar-link" href="#">Habilidades</a>
                 <a class="responsive-navbar-link" href="#">Referencias</a>
             </div>
@@ -83,7 +85,7 @@
                     <p class="info-description">Soy programador web con más de dos años de experiencia trabajando en
                         proyectos de aplicaciones web, utilizando diversos frameworks y tecnologías para su desarrollo,
                         ya sea orientado al cliente (frontend) como también del lado del servidor (backend).</p>
-                    <a class="show-cv">Visualizar
+                    <a class="primary-button">Visualizar
                         CV</a>
                     <!--Social media-->
                     <div class="social-media">
@@ -228,9 +230,8 @@
                     </div>
                 </div>
             </div>
-
             <!--Supplementary education-->
-            <div class="px-0 md:px-5 pt-10 pb-4">
+            <div class="px-0 md:px-5 pt-10">
                 <h3 class="section-subtitle text-center">Formación complementaria</h3>
                 <!--Courses-->
                 <div class="supplementary-education-wrap">
@@ -337,17 +338,163 @@
                             <img class="course-img" src="img/laravel-2.svg" alt="Laravel">
                             <p class="course-name">Curso de HTML desde cero</p>
                             <a class="course-link" href="#"><i class="bi bi-arrow-up-right-circle-fill"></i></a>
-                        </div>                        
+                        </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
 
         <!--Portfolio section-->
-        <div class="section pt-16 min-h-screen h-96 w-full" id="portfolio">
-            <h2>Portafolio</h2>
+        <div class="section pt-16 min-h-screen " id="portfolio">
+            <!--Wrap-->
+            <div class="px-5 py-4 space-y-5">
+                <!--Header-->
+                <div class="text-center space-y-4 px-6 pt-4 pb-12 md:pt-8">
+                    <h2 class="section-title">Proyectos<h2>
+                            <p class="section-description">Listado de los proyectos principales en los que he trabajado.
+                            </p>
+                </div>
+                <!--Projects-->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-4 sm:px-8 md:px-12">
+
+                    <div
+                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
+                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
+                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
+
+                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
+                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
+                                Remate de bienes públicos</h3>
+                            <div class="flex flex-wrap space-x-3">
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
+                            </div>
+
+                            <div class="flex flex-wrap space-x-2">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                            </div>
+                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
+                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
+                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
+
+                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
+                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
+                                Aprende de ciberseguridad</h3>
+                            <div class="flex flex-wrap space-x-3">
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
+                            </div>
+
+                            <div class="flex flex-wrap space-x-2">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                            </div>
+                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
+                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
+                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
+
+                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
+                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">San
+                                Isidro Unido</h3>
+                            <div class="flex flex-wrap space-x-3">
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
+                            </div>
+
+                            <div class="flex flex-wrap space-x-2">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                            </div>
+                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
+                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
+                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
+
+                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
+                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
+                                Rescate animal</h3>
+                            <div class="flex flex-wrap space-x-3">
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
+                                <span
+                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
+                            </div>
+
+                            <div class="flex flex-wrap space-x-2">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                            </div>
+                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
+
+        <!--Services-->
+
+        <!--Habilities-->
+
+        <!--Referencies-->
+
+        <!--Footer-->
 
     </main>
 

@@ -19,8 +19,8 @@ module.exports = {
         'light-surface': '#ffff',
         'light-backgound': '#f3f4f6',
         //dark mode
-        'dark-surface': '#000000',
-        'dark-background': '#121212',
+        'dark-surface': '#121212',
+        'dark-background': '#000000',
 
       }
     },

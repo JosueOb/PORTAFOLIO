@@ -215,7 +215,7 @@
 .project-tools {
     @apply flex flex-wrap space-x-2;
 }
-.tool-icon {
+.project-tool-icon {
     @apply w-6 h-6 mb-1; 
 }
 
@@ -242,6 +242,32 @@
 }
 .horizontal-line {
     @apply w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange;
+}
+
+/*Skills*/
+.skill {
+    @apply space-y-2 py-2;
+}
+.skill-title {
+    @apply text-xl md:text-2xl font-bold tracking-wider text-center uppercase dark:text-white;
+}
+.skill-tools-wrap {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 px-10;
+}
+.skill-tool {
+    @apply flex items-center space-x-3;
+}
+.skill-tool-icon {
+    @apply w-10 h-10;
+}
+.skill-tool-porcentage-wrap {
+    @apply bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600;
+}
+.skill-tool-porcentage {
+    @apply bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange;
+}
+.skill-tool-porcentage-title {
+    @apply text-light-backgound text-xs dark:text-primary-dark;
 }
 
 @tailwind utilities;

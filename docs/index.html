@@ -48,8 +48,8 @@
                         href="#portfolio" @click="setSection('portfolio')">Portafolio</a>
                     <a :class="{ 'navbar-link-active': isSelectedSection('services') }" class="navbar-link"
                         href="#services" @click="setSection('services')">Servicios</a>
-                    <a :class="{ 'navbar-link-active': isSelectedSection('skills') }" class="navbar-link" 
-                        href="#skills" @click="setSection('skills')">Habilidades</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('skills') }" class="navbar-link" href="#skills"
+                        @click="setSection('skills')">Habilidades</a>
                     <a :class="{ 'navbar-link-active': isSelectedSection('references') }" class="navbar-link"
                         href="#references" @click="setSection('references')">Referencias</a>
                 </div>
@@ -74,7 +74,7 @@
                     href="#services" @click="section = 'services',  open = false">Servicios</a>
                 <a :class="{ 'responsive-navbar-link-active': section === 'skills' }" class="responsive-navbar-link"
                     href="#skills" @click="section = 'skills',  open = false">Habilidades</a>
-                <a :class="{ 'responsive-navbar-link-active': section === 'references' }" class="responsive-navbar-link" 
+                <a :class="{ 'responsive-navbar-link-active': section === 'references' }" class="responsive-navbar-link"
                     href="#references" @click="section = 'references',  open = false">Referencias</a>
             </div>
         </nav>
@@ -704,12 +704,59 @@
         </div>
 
         <!--Referencies-->
-        <div class="section pt-16 min-h-screen bg-green-800" id="references">
+        <div class="section pt-16" id="references">
+
+            <div class="px-5 pt-4 pb-8 md:pb-48 space-y-5">
+                <!--Header-->
+                <div class="text-center space-y-4 px-6 pt-4 pb-12 md:pt-8">
+                    <h2 class="section-title">Referencias<h2>
+                            <p class="section-description">Lista de referencias</p>
+                </div>
+
+                <!--Content-->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="rounded-2xl px-5 pt-4 pb-14 w-11/12 lg:w-9/12 xl:w-8/12 bg-gray-300 dark:bg-primary-orange">
+                            <h3 class="text-xl">Msc. Byron Loarte</h3>
+                        </div>
+                        <div class="rounded-md w-10/12 lg:w-7/12 xl:w-6/12 shadow transform -translate-y-10 px-8 py-4 bg-light-surface dark:bg-dark-surface dark:text-white">
+                            <div class="flex justify-between flex-wrap break-all">
+                                <i class="bi bi-envelope-fill text-primary-orange dark:text-white"></i>
+                                <p>byron.loarteb@epn.edu.ec</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <i class="bi bi-telephone-fill text-primary-orange dark:text-white"></i>
+                                <p>+593 99 564 4186</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center text-center">
+                        <div class="rounded-2xl px-5 pt-4 pb-14 w-11/12 lg:w-9/12 xl:w-8/12 bg-gray-300 dark:bg-primary-orange">
+                            <h3 class="text-xl">Msc. Byron Loarte</h3>
+                        </div>
+                        <div class="rounded-md w-10/12 lg:w-7/12 xl:w-6/12 shadow transform -translate-y-10 px-8 py-4 bg-light-surface dark:bg-dark-surface dark:text-white">
+                            <div class="flex justify-between flex-wrap break-all">
+                                <i class="bi bi-envelope-fill text-primary-orange dark:text-white"></i>
+                                <p>byron.loarteb@epn.edu.ec</p>
+                            </div>
+                            <div class="flex justify-between">
+                                <i class="bi bi-telephone-fill text-primary-orange dark:text-white"></i>
+                                <p>+593 99 564 4186</p>
+                            </div>
+                        </div>
+                    </div>
+ 
+
+                </div>
+            </div>
+
 
         </div>
-        <!--Footer-->
-
     </main>
+
+    
 
     <script src="js/theme_mode.js"></script>
     <script src="js/switch_section.js"></script>

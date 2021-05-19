@@ -17,10 +17,11 @@
     <script src="js/local_storage_theme.js"></script>
 </head>
 
-<body x-data="{dark:false, open:false, ...ThemeMode(), ...switchSection() }" x-init="setIcon(), defaultSection()">
+<body x-data="{dark:false, open:false, ...ThemeMode(), ...switchSection()}" x-init="setIcon(), defaultSection()">
+
     <header>
         <!--Navbar - Navigation-->
-        <nav    class="navbar-wrap">
+        <nav class="navbar-wrap">
             <!--Primary navigation menu-->
             <div class="navbar-primary">
                 <!--Header-->
@@ -123,15 +124,15 @@
         <!--Experience section-->
         <div class="section pt-16" id="experience">
             <!--Timeline-->
-            <div class="timeline-wrap">
+            <div class="one-to-two-block">
                 <!--Header-->
-                <div class="timeline-header text-center lg:text-left">
+                <div class="first-block text-center lg:text-left">
                     <h2 class="section-title">Experiencia Laboral</h2>
                     <p class="section-description">Listado de los proyectos en los que he trabajado, junto con
                         una descripción de las actividades realizadas en cada uno de ellos.</p>
                 </div>
                 <!--Content-->
-                <div class="timeline-content">
+                <div class="second-block">
                     <!--Lines-->
                     <div class="timeline-division-line-wrap">
                         <div class="timeline-division-lines">
@@ -140,7 +141,7 @@
                         </div>
                     </div>
                     <!--Items-->
-                    <div class="timeline-items">
+                    <div class="second-block-card">
                         <!--First item-->
                         <div class="timeline-left-item-wrap">
                             <div class="timeline-aux-item"></div>
@@ -187,14 +188,14 @@
         <!--Education section-->
         <div class="section  pt-16" id="education">
             <!--Timeline-->
-            <div class="timeline-wrap lg:flex-row-reverse">
+            <div class="one-to-two-block lg:flex-row-reverse">
                 <!--Header-->
-                <div class="timeline-header text-center lg:text-right">
+                <div class="first-block text-center lg:text-right">
                     <h2 class="section-title">Formación Académica<h2>
                             <p class="section-description">Listado de mi preparación académica.</p>
                 </div>
                 <!--Content-->
-                <div class="timeline-content">
+                <div class="second-block">
                     <!--Lines-->
                     <div class="timeline-division-line-wrap">
                         <div class="timeline-division-lines">
@@ -203,7 +204,7 @@
                         </div>
                     </div>
                     <!--Items-->
-                    <div class="timeline-items">
+                    <div class="second-block-card">
                         <!--First item-->
                         <div class="timeline-left-item-wrap">
                             <div class="timeline-aux-item"></div>
@@ -352,151 +353,53 @@
         <!--Portfolio section-->
         <div class="section pt-16" id="portfolio">
             <!--Wrap-->
-            <div class="px-5 py-4 space-y-5">
+            <div class="porfolio-wrap">
                 <!--Header-->
-                <div class="text-center space-y-4 px-6 pt-4 pb-12 md:pt-8">
+                <div class="portfolio-header">
                     <h2 class="section-title">Proyectos<h2>
                             <p class="section-description">Listado de los proyectos principales en los que he trabajado.
                             </p>
                 </div>
                 <!--Projects-->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-4 sm:px-8 md:px-12">
+                <div class="projects-wrap">
 
-                    <div
-                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
-                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
-                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
+                    <div class="project">
+                        <img class="project-img" src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
 
-                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
-                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
-                                Remate de bienes públicos</h3>
-                            <div class="flex flex-wrap space-x-3">
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
+                        <div class="project-content">
+                            <!--Title-->
+                            <h3 class="project-title">Remate de bienes públicos</h3>
+                            <!--Categories-->
+                            <div class="project-pills">
+                                <span class="primary-pill">Diseño</span>
+                                <span class="primary-pill">IU/UX</span>
+                                <span class="primary-pill">BDD</span>
+                                <span class="primary-pill">Web</span>
                             </div>
-
-                            <div class="flex flex-wrap space-x-2">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
+                            <!--Tools-->
+                            <div class="project-tools">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
+                                <img class="tool-icon" src="icons/mysql.svg" alt="">
                             </div>
+                            <!--Option-->
                             <a href="#" class="primary-button text-xs">Visualizar</a>
                         </div>
                     </div>
-
-                    <div
-                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
-                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
-                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
-
-                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
-                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
-                                Aprende de ciberseguridad</h3>
-                            <div class="flex flex-wrap space-x-3">
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
-                            </div>
-
-                            <div class="flex flex-wrap space-x-2">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                            </div>
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
-                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
-                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
-
-                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
-                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">San
-                                Isidro Unido</h3>
-                            <div class="flex flex-wrap space-x-3">
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
-                            </div>
-
-                            <div class="flex flex-wrap space-x-2">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                            </div>
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
-                        </div>
-                    </div>
-
-                    <div
-                        class="bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface">
-                        <img class="bg-re-800 w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md"
-                            src="img/anime-samurai-girl-hd-wallpaper-5120x2160.jpeg" alt="">
-
-                        <div class="w-full flex flex-col justify-center items-center px-4 py-5 space-y-2">
-                            <h3 class="text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center">
-                                Rescate animal</h3>
-                            <div class="flex flex-wrap space-x-3">
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Diseño</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">IU/UX</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">BDD</span>
-                                <span
-                                    class="inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark">Web</span>
-                            </div>
-
-                            <div class="flex flex-wrap space-x-2">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                                <img class="w-6 h-6 mb-1" src="icons/mysql.svg" alt="">
-                            </div>
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
-                        </div>
-                    </div>
-
+                    
                 </div>
             </div>
         </div>
 
         <!--Services section-->
         <div class="section pt-16" id="services">
-            <div class="timeline-wrap">
+            <div class="one-to-two-block">
                 <!--Header-->
-                <div class="timeline-header">
+                <div class="first-block">
                     <h2 class="section-title">Servicios<h2>
                             <p class="section-description">Listado de mis principales servicios profesionales que
                                 ofrezco como desarrollador.</p>
@@ -604,9 +507,9 @@
 
         <!--Skills section-->
         <div class="section pt-16" id="skills">
-            <div class="timeline-wrap lg:flex-row-reverse">
+            <div class="one-to-two-block lg:flex-row-reverse">
                 <!--Header-->
-                <div class="timeline-header text-center lg:text-right">
+                <div class="first-block text-center lg:text-right">
                     <h2 class="section-title">Habilidades<h2>
                             <p class="section-description">Concimiento y manejo de determinadas
                                 herramientas.</p>
@@ -766,12 +669,13 @@
             <div
                 class="flex items-center flex-col md:flex-row justify-center w-full md:w-8/12 space-y-5 md:space-x-2 md:space-y-0">
                 <div class="w-20 md:w-32">
-                    <img x-show="!dark"  src="img/logo-2.png" alt="Logo - JosueOb">
-                    <img x-show="dark"  src="img/logo-2-dark.png" alt="Logo Dark - JosueOb">
+                    <img x-show="!dark" src="img/logo-2.png" alt="Logo - JosueOb">
+                    <img x-show="dark" src="img/logo-2-dark.png" alt="Logo Dark - JosueOb">
                 </div>
-                
+
                 <div class="space-y-5 text-center md:px-10">
-                    <p class="font-medium text-primary-dark md:text-lg dark:text-white">Puedes contactarte conmigo a través de los siguientes medios para construir
+                    <p class="font-medium text-gray-700 md:text-lg dark:text-gray-300">Puedes contactarte conmigo a
+                        través de los siguientes medios para construir
                         tus ideas juntos.</p>
                     <!--Social media-->
                     <div class="social-media">
@@ -796,7 +700,8 @@
                 <a class="text-sm text-gray-600 dark:text-primary-orange" href="#references">Referencias</a>
             </div>
         </div>
-        <p class="text-sm text-gray-500 text-center dark:text-gray-400">Copyright © 2021 JosueOb. Todos los derechos reservados.</p>
+        <p class="text-sm text-gray-500 text-center dark:text-gray-400">Copyright © 2021 JosueOb. Todos los derechos
+            reservados.</p>
     </footer>
 
     <script src="js/theme_mode.js"></script>

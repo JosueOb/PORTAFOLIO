@@ -1,9 +1,20 @@
 @tailwind base;
 @tailwind components;
 
+/*Components*/
 .primary-button {
     @apply inline-block text-sm uppercase font-bold tracking-wider rounded py-2 px-4 border border-primary-dark bg-transparent hover:border-transparent hover:bg-primary-dark hover:text-white dark:border-primary-orange dark:text-primary-orange dark:hover:bg-secondary-orange dark:hover:text-primary-dark dark:hover:border-transparent;
 }
+.primary-pill {
+    @apply inline-block rounded-full text-gray-500 bg-gray-100 px-2 py-1 text-xs font-bold mb-1 dark:bg-secondary-orange dark:text-primary-dark;
+}
+.social-media {
+    @apply flex justify-center flex-wrap space-x-3 lg:space-x-4;
+}
+.social-media-icon {
+    @apply text-3xl hover:text-primary-orange dark:hover:text-secondary-orange;
+}
+
 /*Navbar - Menú de navegación*/
 .navbar-wrap {
     @apply  fixed w-full top-0 z-50 border-b border-light-backgound bg-light-surface shadow-sm dark:bg-dark-surface dark:border-dark-background;
@@ -41,7 +52,8 @@
 .responsive-navbar-link {
     @apply block pl-8 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-600 hover:text-primary-dark hover:bg-gray-50 hover:border-gray-400 focus:outline-none dark:text-white dark:hover:bg-secondary-orange dark:hover:border-primary-orange dark:hover:text-primary-dark;
 }
-/*Switch para el cambiar el modo de presntación Dark o Light*/
+
+/*Switch para el cambiar el modo de presentación Dark o Light*/
 .switch-theme-light {
     @apply h-12 w-12 rounded-full focus:outline-none border border-gray-100 bg-light-backgound;
 }
@@ -51,6 +63,7 @@
 .switch-theme-icon {
     @apply text-xl text-primary-dark dark:text-primary-orange;
 }
+
 /*Hero*/
 .hero {
     @apply h-full min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 bg-light-surface shadow pb-10 md:pb-12 dark:bg-dark-surface;
@@ -63,13 +76,6 @@
 }
 .info-description {
     @apply text-sm text-gray-500 md:text-base md:text-left dark:text-gray-300;
-}
-
-.social-media {
-    @apply flex justify-center flex-wrap space-x-3 lg:space-x-4;
-}
-.social-media-icon {
-    @apply text-3xl hover:text-primary-orange dark:hover:text-secondary-orange;
 }
 .photo-wrap {
     @apply w-2/3 sm:w-2/4 md:w-5/12 lg:w-1/2 px-6 py-5 flex items-center;
@@ -86,6 +92,7 @@
 .next-section-icon {
     @apply text-primary-dark dark:text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-bounce hover:text-primary-orange dark:hover:text-secondary-orange;
 }
+
 /*Section*/
 .section-title {
     @apply text-3xl lg:text-4xl font-semibold tracking-wide text-primary-dark dark:text-white;
@@ -96,17 +103,20 @@
 .section-description {
     @apply text-sm md:text-base text-gray-500 dark:text-gray-400;
 }
-
-/*Timeline*/
-.timeline-wrap {
+.one-to-two-block {
     @apply flex flex-col lg:flex-row items-start px-0 md:px-5 py-4;
 }
-.timeline-header {
+.first-block {
     @apply sticky w-full lg:top-20 lg:w-3/12 space-y-4 px-6 pt-4 pb-12 md:pt-8;
 }
-.timeline-content {
+.second-block {
     @apply w-full lg:w-9/12 relative;
 }
+.second-block-card {
+    @apply bg-light-surface shadow dark:bg-dark-surface md:rounded-md space-y-10 md:space-y-2 py-6;
+}
+
+/*Timeline*/
 .timeline-division-line-wrap {
     @apply absolute w-full h-full py-10 px-8 md:px-0 md:py-8;
 }
@@ -118,9 +128,6 @@
 }
 .timeline-second-line {
     @apply border-r-4 rounded-tr-md rounded-br-md border-primary-orange dark:border-secondary-orange;
-}
-.timeline-items {
-    @apply bg-light-surface shadow dark:bg-dark-surface md:rounded-md space-y-10 md:space-y-2 py-6;
 }
 .timeline-left-item-wrap {
     @apply flex flex-row-reverse;
@@ -146,6 +153,7 @@
 .timeline-item-description {
     @apply text-sm lg:text-base leading-snug text-gray-600 dark:text-gray-300;
 }
+
 /*Supplementary education*/
 .supplementary-education-wrap {
     @apply px-3 py-4 space-y-5;
@@ -159,11 +167,11 @@
 .supplementary-education-name {
     @apply text-xl lg:text-2xl font-bold tracking-wide text-primary-dark dark:text-white;
 }
-
 .supplementary-education-grid {
     @apply grid grid-cols-1  md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 lg:gap-5 px-4 sm:px-8 md:px-12;
 }
-/*Card*/
+
+/*Course card*/
 .course {
     @apply flex space-x-3 bg-light-surface shadow rounded-md items-center px-7 md:px-4 lg:px-6 py-3 dark:bg-dark-surface;
 }
@@ -176,6 +184,41 @@
 .course-link {
     @apply block text-2xl text-gray-700 dark:text-gray-400;
 }
+
+/*portfolio*/
+.portfolio-wrap {
+    @apply px-5 py-4 space-y-5;
+}
+.portfolio-header {
+    @apply text-center space-y-4 px-6 pt-4 pb-12 md:pt-8;
+}
+.projects-wrap {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-4 sm:px-8 md:px-12;
+}
+
+/*Project card*/
+.project {
+    @apply bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface;
+}
+.project-img {
+    @apply w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md;
+}
+.project-content {
+    @apply w-full flex flex-col justify-center items-center px-4 py-5 space-y-2;
+}
+.project-title {
+    @apply text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center;
+}
+.project-pills {
+    @apply flex flex-wrap space-x-3;
+}
+.project-tools {
+    @apply flex flex-wrap space-x-2;
+}
+.tool-icon {
+    @apply w-6 h-6 mb-1; 
+}
+
 
 @tailwind utilities;
 

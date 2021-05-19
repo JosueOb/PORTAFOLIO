@@ -7,6 +7,7 @@ module.exports = {
         custom : ['Nunito', 'sans-serif'],
       },
       colors: {
+        //free colors
         'primary-orange': '#F9AA33',
         'secondary-orange': '#ffd942',
         'tertiary-orange': '#fdeb5d',

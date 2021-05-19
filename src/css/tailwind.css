@@ -269,6 +269,31 @@
 .skill-tool-porcentage-title {
     @apply text-light-backgound text-xs dark:text-primary-dark;
 }
+.reference-wrap {
+    @apply px-5 pb-8 md:pb-32;
+}
+.reference-header {
+    @apply text-center space-y-4 px-6 pt-4 pb-12 md:pt-8;
+}
+.reference-content {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-5 md:py-16;
+}
+/*Contact card*/
+.contact {
+    @apply flex flex-col items-center text-center;
+}
+.contact-name-wrap {
+    @apply rounded-2xl px-5 pt-4 pb-14 w-11/12 lg:w-9/12 xl:w-8/12 bg-gray-300 dark:bg-primary-orange;
+}
+.contact-name {
+    @apply text-xl;
+}
+.contact-info-wrap {
+    @apply rounded-md w-10/12 lg:w-7/12 xl:w-6/12 shadow transform -translate-y-10 px-8 py-4 bg-light-surface dark:bg-dark-surface dark:text-white;
+}
+.contact-info {
+    @apply flex justify-between flex-wrap break-all;
+}
 
 @tailwind utilities;
 

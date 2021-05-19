@@ -87,7 +87,7 @@
     @apply absolute bottom-0 w-full;
 }
 .next-section-position {
-    @apply flex justify-center;
+    @apply flex flex-col justify-center items-center w-full;
 }
 .next-section-icon {
     @apply text-primary-dark dark:text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-bounce hover:text-primary-orange dark:hover:text-secondary-orange;

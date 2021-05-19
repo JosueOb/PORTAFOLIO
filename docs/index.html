@@ -48,9 +48,10 @@
                         href="#portfolio" @click="setSection('portfolio')">Portafolio</a>
                     <a :class="{ 'navbar-link-active': isSelectedSection('services') }" class="navbar-link"
                         href="#services" @click="setSection('services')">Servicios</a>
-                    <a :class="{ 'navbar-link-active': isSelectedSection('skills') }" class="navbar-link" href="#skills"
-                        @click="setSection('skills')">Habilidades</a>
-                    <a class="navbar-link" href="#">Referencias</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('skills') }" class="navbar-link" 
+                        href="#skills" @click="setSection('skills')">Habilidades</a>
+                    <a :class="{ 'navbar-link-active': isSelectedSection('references') }" class="navbar-link"
+                        href="#references" @click="setSection('references')">Referencias</a>
                 </div>
                 <!--Hamburger-->
                 <button title="Menu" type="button" class="navbar-caret" @click="open = !open">
@@ -73,7 +74,8 @@
                     href="#services" @click="section = 'services',  open = false">Servicios</a>
                 <a :class="{ 'responsive-navbar-link-active': section === 'skills' }" class="responsive-navbar-link"
                     href="#skills" @click="section = 'skills',  open = false">Habilidades</a>
-                <a class="responsive-navbar-link" href="#">Referencias</a>
+                <a :class="{ 'responsive-navbar-link-active': section === 'references' }" class="responsive-navbar-link" 
+                    href="#references" @click="section = 'references',  open = false">Referencias</a>
             </div>
         </nav>
     </header>
@@ -492,97 +494,219 @@
             </div>
         </div>
 
-        <!--Services-->
+        <!--Services section-->
         <div class="section pt-16" id="services">
             <div class="timeline-wrap">
                 <!--Header-->
                 <div class="timeline-header">
                     <h2 class="section-title">Servicios<h2>
-                            <p class="section-description">Listado de mis principales servicios profesionales que ofrezco como desarrollador.</p>
+                            <p class="section-description">Listado de mis principales servicios profesionales que
+                                ofrezco como desarrollador.</p>
                 </div>
                 <!--Content-->
                 <div class="grid grid-col-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 w-full sm:px-5">
 
 
-                    <div class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
-                        <div class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
+                    <div
+                        class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
+                        <div
+                            class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
                             <i class="bi bi-columns-gap text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">Landing Page</h3>
+                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">
+                            Landing Page</h3>
 
                         <div class="flex justify-center w-full">
-                            <span class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
+                            <span
+                                class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
                         </div>
-                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, optio delectus
+                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Consequatur, optio delectus
                             asperiores dolore qui quae quibusdam error praesentium eaque molestias ad? Totam minus dicta
                             repudiandae suscipit voluptatibus, maiores corrupti distinctio.</p>
                     </div>
-                    <div class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
-                        <div class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
+                    <div
+                        class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
+                        <div
+                            class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
                             <i class="bi bi-columns-gap text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">Landing Page</h3>
+                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">
+                            Landing Page</h3>
 
                         <div class="flex justify-center w-full">
-                            <span class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
+                            <span
+                                class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
                         </div>
-                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, optio delectus
+                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Consequatur, optio delectus
                             asperiores dolore qui quae quibusdam error praesentium eaque molestias ad? Totam minus dicta
                             repudiandae suscipit voluptatibus, maiores corrupti distinctio.</p>
                     </div>
-                    <div class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
-                        <div class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
+                    <div
+                        class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
+                        <div
+                            class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
                             <i class="bi bi-columns-gap text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">Landing Page</h3>
+                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">
+                            Landing Page</h3>
 
                         <div class="flex justify-center w-full">
-                            <span class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
+                            <span
+                                class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
                         </div>
-                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, optio delectus
+                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Consequatur, optio delectus
                             asperiores dolore qui quae quibusdam error praesentium eaque molestias ad? Totam minus dicta
                             repudiandae suscipit voluptatibus, maiores corrupti distinctio.</p>
                     </div>
-                    <div class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
-                        <div class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
+                    <div
+                        class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
+                        <div
+                            class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
                             <i class="bi bi-columns-gap text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">Landing Page</h3>
+                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">
+                            Landing Page</h3>
 
                         <div class="flex justify-center w-full">
-                            <span class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
+                            <span
+                                class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
                         </div>
-                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, optio delectus
+                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Consequatur, optio delectus
                             asperiores dolore qui quae quibusdam error praesentium eaque molestias ad? Totam minus dicta
                             repudiandae suscipit voluptatibus, maiores corrupti distinctio.</p>
                     </div>
-                    <div class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
-                        <div class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
+                    <div
+                        class="bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface">
+                        <div
+                            class="h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background">
                             <i class="bi bi-columns-gap text-green-400"></i>
                         </div>
-                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">Landing Page</h3>
+                        <h3 class="text-2xl font-bold tracking-wide text-center text-primary-dark dark:text-white">
+                            Landing Page</h3>
 
                         <div class="flex justify-center w-full">
-                            <span class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
+                            <span
+                                class="w-1/2 border-b-8 border-primary-orange rounded dark:border-secondary-orange"></span>
                         </div>
-                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, optio delectus
+                        <p class="text-center text-gray-700 dark:text-gray-300">Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Consequatur, optio delectus
                             asperiores dolore qui quae quibusdam error praesentium eaque molestias ad? Totam minus dicta
                             repudiandae suscipit voluptatibus, maiores corrupti distinctio.</p>
                     </div>
 
-                    
-                    
+
+
                 </div>
             </div>
         </div>
 
-        <!--Skills-->
-        <div class="section pt-16 min-h-screen bg-green-800" id="skills">
-            Habilidades
+        <!--Skills section-->
+        <div class="section pt-16" id="skills">
+            <div class="timeline-wrap lg:flex-row-reverse">
+                <!--Header-->
+                <div class="timeline-header text-center lg:text-right">
+                    <h2 class="section-title">Habilidades<h2>
+                            <p class="section-description">Concimiento y manejo de determinadas
+                                herramientas.</p>
+                </div>
+                <!--Content-->
+                <div class="w-full px-10 py-5 bg-light-surface rounded-md shadow dark:bg-dark-surface">
+
+                    <!--Skill-->
+                    <div class="space-y-2 py-2">
+                        <h3 class="text-xl md:text-2xl font-bold tracking-wider text-center uppercase dark:text-white">
+                            Frontend</h3>
+                        <!--Items-->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4 px-10">
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <img class="w-10 h-10" src="img/laravel-2.svg" alt="">
+                                <div class="bg-gray-200 rounded-full h-1/3 w-full dark:bg-gray-600">
+                                    <div
+                                        class="w-1/2 bg-secondary-dark rounded-full h-full flex items-center justify-center dark:bg-secondary-orange">
+                                        <span class="text-light-backgound text-xs dark:text-primary-dark">50%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!--Logos / Achievements-->
         </div>
 
         <!--Referencies-->
+        <div class="section pt-16 min-h-screen bg-green-800" id="references">
 
+        </div>
         <!--Footer-->
 
     </main>

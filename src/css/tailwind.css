@@ -232,7 +232,7 @@
     @apply bg-light-surface shadow sm:rounded-md px-6 py-7 flex flex-col justify-center items-center space-y-2 dark:bg-dark-surface;
 }
 .service-icon {
-    @apply h-16 w-16 text-2xl md:text-4xl bg-light-backgound rounded-full flex justify-center items-center dark:bg-dark-background;
+    @apply h-16 w-16 flex justify-center items-center;
 }
 .service-description {
     @apply text-center text-gray-700 dark:text-gray-300;

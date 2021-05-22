@@ -2,3 +2,4 @@
 tailwindcss.config.default.js
 .parcel-cache
 .vscode
+.idea

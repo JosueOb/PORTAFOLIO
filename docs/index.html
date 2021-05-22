@@ -25,7 +25,6 @@
         <template @image-modal.window="imageModal = true;
             title = $event.detail.title;
             description = $event.detail.description;
-            website = $event.detail.website; 
             images = $event.detail.images;" x-if="imageModal">
             <div x-transition:enter="transition ease-out duration-300"
                 x-transition:enter-start="opacity-0 transform scale-90"
@@ -33,22 +32,21 @@
                 x-transition:leave="transition ease-in duration-300"
                 x-transition:leave-start="opacity-100 transform scale-100"
                 x-transition:leave-end="opacity-0 transform scale-90"
-                class="fixed w-full min-h-screen inset-0 z-50 overflow-hidden bg-yellow-200 bg-opacity-75 flex justify-center items-center">
+                class="fixed w-full min-h-screen inset-0 z-50 overflow-hidden bg-black bg-opacity-90 flex justify-center items-center">
 
-                <div class="flex flex-col max-h-full max-w-4xl overflow-auto bg-red-800"
-                    @click.away="imageModal = false">
+                <div class="flex flex-col max-h-full w-full overflow-auto py-16 px-5">
 
-                    <button class="text-2xl float-right pt-2 pr-2 outline-none focus:outline-none"
-                        @click="imageModal = false">
-                        <i class="bi bi-x-square-fill"></i>
-                    </button>
-                    <div class="bg-gree-400 ">
-                        <h2 x-text="title"></h2>
-                        <p x-text="description"></p>
-                        <template
-                            x-if="website.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);">
-                            <p x-text="website"></p>
-                        </template>
+                    <div class="w-full md:w-2/3 mx-auto bg-white rounded-lg px-8 py-10 space-y-2 dark:bg-dark-surface"
+                        @click.away="imageModal = false">
+                        <button
+                            class="sticky top-0 float-right p-1  mr-2 mt-2  text-5xl text-primary-orange shadow rounded-full bg-light-surface dark:bg-dark-surface"
+                            @click="imageModal = false">
+                            <i class="bi bi-x-circle-fill"></i>
+                        </button>
+
+                        <h2 x-text="title" class="section-title"></h2>
+                        <p x-text="description" class="section-description"></p>
+
 
                         <template x-for="image in images" :key="image">
                             <img class="object-contain" :src="image.src" :alt="image.alt">
@@ -427,7 +425,8 @@
                 <div class="projects-wrap">
                     <!--Project-->
                     <div class="project">
-                        <img class="project-img" src="img/projects/remate-bienes-1.png"
+                        <img class="project-img"
+                            src="https://bn02pap001files.storage.live.com/y4mX2asJzTfPEv6vRAe0ydFHU3VF0DWxgDzXvjKoWqKrQccpZHFLPyAcxnoZ2Izxk32AdW-mqn3sPkn4Cn_tdjXInI-yKDbcOG4m-qs0z8f0xtzAj2cM-2rwRbsdE6NNZVcvdQqHOGYn90Bj2dASDozrAVqoSKQqjGtmiXC9X1gH5reFmuxi43f4qu7DVKVl12n?width=1423&height=864&cropmode=none"
                             alt="Remate de bienes públicos - Landing Page">
 
                         <div class="project-content">
@@ -449,37 +448,56 @@
                                 <img class="project-tool-icon" src="icons/tailwindcss-icon.svg" alt="TailwindCSS">
                             </div>
                             <!--Option-->
-                            <a class="primary-button text-xs" @click="$dispatch('image-modal', {
-                                title: 'Titulo',
-                                description: 'Hola mundo',
-                                website: 'www.facebook.com',
-                                images: [
-                                    {
-                                        alt: 'Nueva image',
-                                        src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Background_Clouds_2_%2855079272%29.jpeg/1280px-Background_Clouds_2_%2855079272%29.jpeg'
-                                    },
-                                    {
-                                        alt: 'Nueva image',
-                                        src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Background_Clouds_2_%2855079272%29.jpeg/1280px-Background_Clouds_2_%2855079272%29.jpeg'
-                                    },
-                                    {
-                                        alt: 'Nueva image',
-                                        src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Background_Clouds_2_%2855079272%29.jpeg/1280px-Background_Clouds_2_%2855079272%29.jpeg'
-                                    },
-                                    {
-                                        alt: 'Nueva image',
-                                        src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Background_Clouds_2_%2855079272%29.jpeg/1280px-Background_Clouds_2_%2855079272%29.jpeg'
-                                    },
-                                    {
-                                        alt: 'Nueva image',
-                                        src:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Background_Clouds_2_%2855079272%29.jpeg/1280px-Background_Clouds_2_%2855079272%29.jpeg'
-                                    }
-                            ]})">Visualizar</a>
+                            <div class="flex flex-wrap justify-center items-center space-y-2 md:space-y-0 md:space-x-2">
+                                <a class="primary-button text-xs" @click="$dispatch('image-modal', {
+                                    title: 'Remate de bienes públicos',
+                                    description: 'Sistema web para el remate de bienes públicos mediante pujas sobre los artículos publicados en una subasta en línea.',
+                                    images: [
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema  - 1',
+                                            src:'https://bn02pap001files.storage.live.com/y4mX2asJzTfPEv6vRAe0ydFHU3VF0DWxgDzXvjKoWqKrQccpZHFLPyAcxnoZ2Izxk32AdW-mqn3sPkn4Cn_tdjXInI-yKDbcOG4m-qs0z8f0xtzAj2cM-2rwRbsdE6NNZVcvdQqHOGYn90Bj2dASDozrAVqoSKQqjGtmiXC9X1gH5reFmuxi43f4qu7DVKVl12n?width=1423&height=864&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 2',
+                                            src:'https://bn02pap001files.storage.live.com/y4mrXLh9HBqbV1HxrX21RFixWMbYyVUeFmTCBmJaH0AHKB0arybWOC2H_mIQNeyBpg2Oy7G-tjpso_ATMj1gA3NiE2gLlNOzKKt5JvoVicR14DsQV5HpBY7ut-7AtqRbCtLgycMUSaruA-dRHjZRyRkdwb7E7cyXO5kD0NMGRBAKg-9e5MD5eOUKcXUT8psMYV5?width=1423&height=765&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 3',
+                                            src:'https://bn02pap001files.storage.live.com/y4mBUxkh4MyIoxdTOOJZOUvNKtYYfBD0UnOMcg-_DLYwAmK6BLYN_zRQYB3eDQtdn5y4ePlPKBwL5ePz2HepNIo-QMfkMFPa_yCSrIYqCjGiEERI8_AVfjtH8bAHev2EtoyMVMdYXvWObFYy_6GVaXMDNZTdRVVMERyZvu-gMGO_o8_bV2pf28W2w5h8TmxBfSw?width=1440&height=825&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 4',
+                                            src:'https://bn02pap001files.storage.live.com/y4mgOB6_QcgR8K00FuinRZPoGSwBrZ-pfbFyKN72o0fZalr_ehLyb7ddhH_CaJEjT2hrnWrlOOhJL-2RU9b8F_FHZQhBlJt-GegfgHL4Ht30YyrecUOs5WD4WaDN_nhT07wAVnigg0ecWYQUDs7oyyoAwvjEuK4ayaax27rwEuTRjYHRphJW3DbJRrd8OpZ8T2E?width=1423&height=799&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 5',
+                                            src:'https://bn02pap001files.storage.live.com/y4mNguJ5WVNr-55bzWwgqRE8G1PplKu9v73ubk06XXhwKqAxHNj-05bLasGTtVhXIKsRPefuidEqZenYZUZzEKM4C28Jr57qYoq61EXw0kymKNcSW7NDZCKugTsXOzWAgSswfVe62S1ss1mIIQuB7lajZd6FWj4u87mjI4nILeHbRSAHMV5eUxY_JLS-EyLoue8?width=1423&height=830&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 6',
+                                            src:'https://bn02pap001files.storage.live.com/y4mSruPJirnWc3MOt2odTcxmV5InE_PRjnahmFVJPUHOHqWDAWBKCZU9D_aozN1hZgApDE46D85TtWe7Eg20WHpc2ILZ6nvLrnBzXv0IuHks4uuGbAfKIUIC6NVAufUUbp-SIpW089oAHLDWQVZKWkdfv32IWjmIPUvYelRBi9HiXDet691MzQtiKYc5g8rGD4Z?width=1440&height=826&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 7',
+                                            src:'https://bn02pap001files.storage.live.com/y4mHmcGNsWNm1NseJk0HSi68h3rJ0uLT1guGG5dKgYb1sQKapxqlSUBLALLU5nRct2z0_o1amy5xTtLA8X4W9vqzlRmaFtCy6oh0Q3bq5e1yCYisvWScxkom8P6xpWxTgm1TueKt6pYua6oFF-t6VBann_jA8fbJTq-EvHJ8aiH6PjMZnmI5HTzvuRt_uSgRj1a?width=1423&height=1568&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'Remate de bienes públicos - Sistema Web - 8',
+                                            src:'https://bn02pap001files.storage.live.com/y4mR83me_Wz9_g1WTjvspLqryxV17BIBYihnY3S3y0qNEd5kMsZR8Qwzo7AUSA-Yb78kqfuxPi3ppKbAf0DUrPzrZKW97QO9ufN0DvgPaRhGdueM8roVkT9p8XmxjH14qs2R2t9i_GClD-L926QepTm6JWJH5eh6ddD8bcTdag1D-nLR9Mt9mfvi7B3ap_u5Alm?width=1423&height=1444&cropmode=none'
+                                        }
+                                ]})">Visualizar</a>
+                                <a target="_blank" class="text-xl text-green-600"
+                                    href="https://remate-bienes.herokuapp.com">
+                                    <i class="bi bi-globe"></i>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                     <!--Project-->
                     <div class="project">
-                        <img class="project-img" src="img/projects/remate-bienes-1.png"
+                        <img class="project-img"
+                            src="https://bn02pap001files.storage.live.com/y4mpqZGU8Fp5YsSB6vUAHV9BqTYCLbMJkGn5DDhptS-zJMgx9kLoOjijIXt06YK3rl4lnE0jBLdwVx93obFKlCgFih54bF94I5N4kiCcYvki_FHtlWM90QvfpOlYLPMCWfoxoQaaSYmWiaySe98Xk19OHaZOYN7kWFhgQ02C_0Tr8FdbTrSkSPtcsbJMM0nyFRg?width=1440&height=826&cropmode=none"
                             alt="Remate de bienes públicos - Landing Page">
 
                         <div class="project-content">
@@ -501,12 +519,73 @@
                                 <img class="project-tool-icon" src="icons/tailwindcss-icon.svg" alt="TailwindCSS">
                             </div>
                             <!--Option-->
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                            <a class="primary-button text-xs" @click="$dispatch('image-modal', {
+                                title: 'Aprende de ciberseguridad',
+                                description: 'Sistema web para gestionar publicaciones y cuestionarios en temáticas de seguridad informática, facilitando la difusión y aprendizaje de los conocimientos por medio de la tecnología.',
+                                images: [
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 1',
+                                        src:'https://bn02pap001files.storage.live.com/y4mpqZGU8Fp5YsSB6vUAHV9BqTYCLbMJkGn5DDhptS-zJMgx9kLoOjijIXt06YK3rl4lnE0jBLdwVx93obFKlCgFih54bF94I5N4kiCcYvki_FHtlWM90QvfpOlYLPMCWfoxoQaaSYmWiaySe98Xk19OHaZOYN7kWFhgQ02C_0Tr8FdbTrSkSPtcsbJMM0nyFRg?width=1440&height=826&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 2',
+                                        src:'https://bn02pap001files.storage.live.com/y4mnuOjxhsjfjB__2vQ3nNSBWRWy9t1w_g08vNErf3x_L6tPjgIJtNXk_ZXJNbrKWtI41BzXU6dKkB53xfCHeK0otXS1cgM3q0baQ4B5U8vAr7efT1PaYZcZduhqqILmlZ_kV7DLqL29QJjwpu7at65aZ_QCNnsC-8ZSztcy4uCT4sRM-x8wMXRtxLzORtvFWNY?width=1440&height=790&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 3',
+                                        src:'https://bn02pap001files.storage.live.com/y4mlrVq8nwlNrGq6-3xkQekhGz4bDl5Knaol5SDTi7Lp3DPwwqse_oqIfP5jSa-URL11XcHdab0LWO6vFpMk6q1HJ05LS9Rfrx_l0R4LByiUVgQwyFBFZ2PS0IE46J0-UXqoeTFfEAOIVV2VtUJIScXld5tdx_wQDTRhwNHT0eScWU7wsDI0WWgJ0lMPYjbsx5O?width=1423&height=1268&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 4',
+                                        src:'https://bn02pap001files.storage.live.com/y4mjFb5UC9Np6i-eW9hMbtglYLiUeynOCFYi2MnhUpvBBUtztbzUd3_mcq15zS-KlPEG3JmQQwj5NoHoO3AmB4HXEKPCvJgQR7qKFCth-Wv3L08LehGFEzsUOJMCntu5njSN_pg_QkjVWIy9p-40202IBW6aBuuOyf-S9SwqBG_TxsmZQe08vYMCFeSmIj1WF5l?width=1423&height=1417&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 5',
+                                        src:'https://bn02pap001files.storage.live.com/y4mavv6IvSEMM942ofMN2jzhckSbNpMrpoq9A73HoIdX3kcoruWK52gvwsbmx4VNL_J-zS2FPpDB4WK865YTsvt6nsuqdk5lXbmX_rpT0ak5FKfEHYxVMyZIw0QIpduwwqs2XXVODMBmOLIlK5BaHSfPMbN2cu5td7DaJRR7vs1XH7_3ALCq09fHPHmqqDRfHqV?width=1440&height=577&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 6',
+                                        src:'https://bn02pap001files.storage.live.com/y4m1yTI2O3ixdQx3h8sLZf0ENqyl77x5kuQwan-1sCTMp1QPbESzTFsa7jXKLWNCnnY87Ovgj_Lm4juCXQhb6-6ShfooR8KkGOadFV4lifjYV5wy6iHFzpTOP1osqJNJOQu-Hq5y71r0xlEHJQy0QhzZqKKCC1byvrQ4LbMvf3ogAOwqeGHcxAVbLiH3pCCPWzO?width=1423&height=877&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 7',
+                                        src:'https://bn02pap001files.storage.live.com/y4m6RGyjg4Rhsa9BJ2-v6pmN8tgxXwkK8XjpMNL1geWsHuRCuI3PG9uCuTjPqp5s8pSscPNSSZv6avIp52ZXTjtOKk1CVa6OyuKfCQyUjm8rqTKw6vdWz_ChPZhwacf5iqhHoKduvwrQTF3GpkYH9aKemmA7eyoRUN7Jo5pkJe7bZYbDBT0dP_1EUgiYCRXrP8y?width=1440&height=795&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 8',
+                                        src:'https://bn02pap001files.storage.live.com/y4mZ8LjWxQ0HOxzvI4MZTadmndS40pO9kcFQ-v_mxyWjzZ_-S72ipomObPYf9tZUjVm7jY2CP7xALs7yD5I0SvJohs3HObU2i8C3qO6k7ohht_PyuZ9Ur6WMy9N0Eh_HrihxSUXwgF4gm16L1WVX_yEBhiufSrlcKV-7J2ZPCDlKZbEJri5veBYEmEFB24uK7Ga?width=1440&height=826&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 9',
+                                        src:'https://bn02pap001files.storage.live.com/y4mAsfg7V0ckABoLQAM-isqdtm0-yc_obQ9zupvBYosxbBz8fWwxdM6HszkhsA8_idCT-xiwrcYGYRgi0J9IsEKPjGnNoLB6OWG0I7yHlV8pC3kdIH_7xfyxnD09NBLnTYGc6334shzXXBA3qo5-Bu2C3zQw6_Pyf9XCDZN6SI6NYN_2DnuwdSUQamc5TWkvwer?width=1440&height=766&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 10',
+                                        src:'https://bn02pap001files.storage.live.com/y4mbirCx0uzhsliYOcUjZZrFyVwwlUXVCOOYJ-TieQ-rUXNY-MlQ1K0oeYcLNcRjljnG0fY5_7QXWq4wJGHowObKdVUrKiZG-J7eKd-P5U05fTyYxe0x8YA2iQ17s8yBcPBMwQzSsa8oOxELnG61tMAFGg0Cew7pxBiBrdUMqfJ5nt_IHSgkxWv9-ejv9o1a0vZ?width=1440&height=601&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 11',
+                                        src:'https://bn02pap001files.storage.live.com/y4mC9tSx87XSy8fnrMRZrUciDyGzTfgptO2EUEe5comiStEf5hPjWOcrHCl5PmzHmRbAn4Twd22Hqqg4S6Pke_4HBl1f5DFS8sWQriCYxYZzHNAQ2MxO7sHsgjFRQ-iEWe6AIqpMQLwAh1qbp55MfI_RE3SUiQ7BFxXdzQIVfFa_GZosCv0CQMlKm9pkKJQx12q?width=1423&height=1120&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 12',
+                                        src:'https://bn02pap001files.storage.live.com/y4mzMN9IHp2Z7OATZXp5egQ06axNjiEsbpNaBmja10otfD-5ihSWl99ue8Z4oSThWv-m12Cya-_XQjZ5wdVdP9S4pQWMxreHCHKI-txC49vxQv-yahB0EarhdrmcIHeKnkZZaYqRUzcq-0GIB0-8rTfUOUJ2eJwqXGCMrphe4Rytp-_wCl6A-H8WBu11iaweMVQ?width=1440&height=700&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 13',
+                                        src:'https://bn02pap001files.storage.live.com/y4me7SXvKLHYbdTLhi3n24MqeMj1Up5SjIw_CuY_-fOCFvhIATk-4Vlvtvk-KS2bfSQRxZhztFlb1wU-Q7lyqT3Dl8uNynDEArLYytlwkkugoYMdc-DIJlsu2IRGUZ9I0HeJLIexMRc3_B4brboxrGf3tiYeHprMHJzcf08ClowjokSnnC1IwR0tCFyEVTDxJgY?width=1423&height=1481&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Ciberseguridad - Sistema web - 14',
+                                        src:'https://bn02pap001files.storage.live.com/y4mkV-hyk49IRcwzCpruubkQLcaY5PXN0qWy664jrIWHGjej3q7il5YnLqfuH4AH33cGqgmMkgJoJk-UGWd0MFjZGt7pjnahQLl57Df_4IuLrMumRuoJiyYEwBY-AVxp7P388hVtvJ9qJIvwxQqBpDwKCq72gEjczybH4lGZjztufLV3UlSiCrvSV9IFtoDoOrs?width=1440&height=448&cropmode=none'
+                                    }
+                            ]})">Visualizar</a>
                         </div>
                     </div>
                     <!--Project-->
                     <div class="project">
-                        <img class="project-img" src="img/projects/remate-bienes-1.png"
+                        <img class="project-img"
+                            src="https://bn02pap001files.storage.live.com/y4mNG_LWl5KVBpacww58b-IaUx8aXbZaPKC719-UYQhXFO6bF1Bsui08FVcLkOTrnJXgtQEyPpW2XD9Pn9_fTsPi6iVD8dL8-xVaKz9PIzMOl6PWoWqmdJ7KOWO0yjNjhENas6009GYAo7uxqZzaOw0YxMDt5DvEQHBlmZJeD3w7wfXYqtJoS0AQQMwWG1kTpTs?width=1424&height=827&cropmode=none"
                             alt="Remate de bienes públicos - Landing Page">
 
                         <div class="project-content">
@@ -527,12 +606,66 @@
                                 <img class="project-tool-icon" src="icons/vue-js-1.svg" alt="Vue">
                             </div>
                             <!--Option-->
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                            <div class="flex flex-wrap justify-center items-center space-y-2 md:space-y-0 md:space-x-2">
+                                <a class="primary-button text-xs" @click="$dispatch('image-modal', {
+                                    title: 'San Isidro Unido',
+                                    description: 'Sistema web para gestionar emergencias y problemas sociales reportados por los moradores e informar sobre actividades, eventos, programas y próximas reuniones.',
+                                    images: [
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 1',
+                                            src:'https://bn02pap001files.storage.live.com/y4mNG_LWl5KVBpacww58b-IaUx8aXbZaPKC719-UYQhXFO6bF1Bsui08FVcLkOTrnJXgtQEyPpW2XD9Pn9_fTsPi6iVD8dL8-xVaKz9PIzMOl6PWoWqmdJ7KOWO0yjNjhENas6009GYAo7uxqZzaOw0YxMDt5DvEQHBlmZJeD3w7wfXYqtJoS0AQQMwWG1kTpTs?width=1424&height=827&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 2',
+                                            src:'https://bn02pap001files.storage.live.com/y4m7HOfVJudqfrObPX9V8aQMiiVwzTFYEcOYvYuqdYRz_RQNC_bZFQv9OQ0_NMP7kGa4n5xMxNfht5ViudntNK3pTB3AntdV8h0KbxTOsvhMZfImWje6h8PXU0-DWeOSz-AqlXVqfHLJ7HoDdIdaoHFu2AVFHg8NpseIl-MPReazCbtWtt2TlAWLsIcNRewaSEJ?width=1186&height=725&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 3',
+                                            src:'https://bn02pap001files.storage.live.com/y4mk8vmuJMhz3sscOeCTJRouY9aJYaeQADZJUgy2_0WyelaCpJpGV9UUotgNzJQOcwUg_j75-aTw8EjPD4mkzbAuMG86OwwRpteKNce9hI7aaYIM5l0pC_tDW17xtMKQKwgKagaLAxK_6jKRXlXwcZV-GisjF4tNi9oiqhGuX9uUu_uLfRyrdRqDEXriFt4pp-o?width=1186&height=670&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 4',
+                                            src:'https://bn02pap001files.storage.live.com/y4mKDaYklMZymMFdXdLuIZPaPQ0q-pEAEDJKlURUecG_mKC50TpuZhKIn-sYYMyoZOrzgZ4siLgFo7MDLAGgdDpcKIvl8QF2DBAg-bbE73qqfQ2YbX7h-OFImZ5aLd6jKo00b29APfDLC6RdjCUar82cq0qS_CnJh_zPPlvdJldHhUS4ev1Ljlqjv_4Q-rNGcnU?width=1186&height=657&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 5',
+                                            src:'https://bn02pap001files.storage.live.com/y4mSc1ku6cBeKgiIOyqCTZVUX77o2IbRPBkoQlGPSV46Dh9r63l_xM2Cz9yUB55P9rC6I-O2q--1Re6eakwYwiCg_Py2DOwOx7d4URdhAVZ0qLvvX089drPdAaHlQBmdxgscgIpWtzJg95WDmyDyHhAIgJJM9xtl6ZDE13tFjLEXM7c6_HM_hA1hk649gQnudha?width=1186&height=922&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 6',
+                                            src:'https://bn02pap001files.storage.live.com/y4m8fuZDX9YdAGoQHK-UahtoV-8oAfnBpv1h-6ZOpWXrjg-GjsnYQDPh1WMev16rVLECY_m5DNaCADPTMGF6D1hPj_Faj7qxiwteX4VAZhNjeQeHz6DovlYHywXMShK2VqHvsQXeb4pwRVmUuuTioba5bssb8tz4fRBMTf6c9Hr3z8hMkQKS8wG35Faa7epmPvp?width=1201&height=615&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 7',
+                                            src:'https://bn02pap001files.storage.live.com/y4mRqV9x5Z19hu83_rNLKvnkF2UHcps6hYWQq8nWMtvAJnxbKWg73j7Tvq4u7Y35SwG0fFO7RS3U6MLfQ82VRw4P-0QadhC8rbz_KMvaM-H8mMhEiWdD-pT5RK7Aa_mhBA0VlD_x9QldsAb6QSc-J9JceXtA4D6pJm6w6tO5NsVjyc7vA6iq0pGX2Z220jlSmDS?width=1186&height=647&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 8',
+                                            src:'https://bn02pap001files.storage.live.com/y4m7UT92PSHMd94OM9Q49dcBnqylNdg2_y85h-024HYlfy4hSkL_CoQ-1Z3-Izquh_WIMWvrUYM7VRNGvybFp9SIuRqL5HyRAQ9F4Uoed-Ps_07y6hs0zPa9Xptsoo_rtV1IpliXYhDHDO57uFMyjPvLjo1BQvOcGn1HUOKjZ2qHNo1cPl3FlGcX7y-Fp0_ZvNR?width=867&height=817&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 9',
+                                            src:'https://bn02pap001files.storage.live.com/y4mvNInsNITpWjAYWdLDotJXt4_KlEFczjwCj23CTMYbUrz7BbNO9Cx26jCw0DLLKBy75z8X5_i9tk3faJmPnhVN7JAkM70bhMyAcFQXiOVGoa6qjqkHrLjSKH4uNQ2x6TrlSBoSR6pL92oqnPubAcW0TmSYzGVOgIlZJe-bYuLOyWGf84r42ZSmgL7wR-JWbXm?width=918&height=347&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 10',
+                                            src:'https://bn02pap001files.storage.live.com/y4mP67ka-m-essFnFu6mWmdMCCx8GQVFiG-E7vTMMTF2VrWq0O76vayIlh8T_0OMN1AjvEsqJ_SunwHUqjvMutRmCjZqywROniR0STuDFH-oCKWhEdLVa-0vKVDwoWwW_X0tMyR9EoU3OSw9D42mMsYeEIlMdTu5kNcg7EfwPr1n-P95unVclxv__4OeDO64_yy?width=948&height=831&cropmode=none'
+                                        },
+                                        {
+                                            alt: 'San Isidro Unido - Sistema Web - 11',
+                                            src:'https://bn02pap001files.storage.live.com/y4mnrxVjww9HPPj_UvBE-3qz9jwT6RLi_ldZW5GD0TxBM-e6Kg0icIVKykl1M5AdfydyWyd0WErsgLY8_j0v5vYXJJegRYdz9M6zO1LMDYwWow8-WdX7_KnpfTYkOU5K5b5BPfm2VJoZLh83MCNkOyZ1EksFrq_v-R1Kgon2pT5uvL989IYJF3CAvYJGrSgl_V1?width=973&height=716&cropmode=none'
+                                        }
+                                ]})">Visualizar</a>
+                                <a target="_blank" class="text-xl text-green-600"
+                                    href="https://sanisidrodevec.herokuapp.com/">
+                                    <i class="bi bi-globe"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <!--Project-->
                     <div class="project">
-                        <img class="project-img" src="img/projects/remate-bienes-1.png"
+                        <img class="project-img" src="https://bn02pap001files.storage.live.com/y4mVPy_nYm8IZmqOZfF_tuPEiqzaXIOCJqWONrBHNL_mu9Otzh9UL8J9A7UDCKjJajfEF_amAQss6Dgx-XvGbugLM1lH6kQtrl8t_Bw26PJ9UxxXqg7nNRsI7St26Lgot3cSmRXn9KM_ilFep56Swe1rRKAhBE4C5IwM0Y-zqNHTSNqQUfHvcu6yey-JFhJxykV?width=1423&height=793&cropmode=none"
                             alt="Remate de bienes públicos - Landing Page">
 
                         <div class="project-content">
@@ -553,7 +686,59 @@
                                 <img class="project-tool-icon" src="icons/jquery-icon.svg" alt="jQuery">
                             </div>
                             <!--Option-->
-                            <a href="#" class="primary-button text-xs">Visualizar</a>
+                            <a class="primary-button text-xs" @click="$dispatch('image-modal', {
+                                title: 'Rescate Animal',
+                                description: 'Sistema web para la publicación de animales recatados de la calle para su adopción.',
+                                images: [
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 1',
+                                        src:'https://bn02pap001files.storage.live.com/y4mVPy_nYm8IZmqOZfF_tuPEiqzaXIOCJqWONrBHNL_mu9Otzh9UL8J9A7UDCKjJajfEF_amAQss6Dgx-XvGbugLM1lH6kQtrl8t_Bw26PJ9UxxXqg7nNRsI7St26Lgot3cSmRXn9KM_ilFep56Swe1rRKAhBE4C5IwM0Y-zqNHTSNqQUfHvcu6yey-JFhJxykV?width=1423&height=793&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 2',
+                                        src:'https://bn02pap001files.storage.live.com/y4myQjWCx9OC2jlb2INXmBvSmv3TS2Njz9iwJ7KwFUYk3WDOnsjqIJtce9D3dvqUzNuj2ZgiraSgTujsdd4u2x_BFdc86T-Rcl0arYlMX1do_WlwwTZSG-om_y_yhf67s2zpCzrDSmwE1JrRhFfXLBXxDkFN8SM-_yeWqwH5f1kSAuAH-P2qF9fCTgxrl6IsP1L?width=1423&height=858&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 3',
+                                        src:'https://bn02pap001files.storage.live.com/y4m2YSkbN4uL5pOwmof6SRXEF71j9pAt8DVnoqJl7lRseY2F8lCrlUy9v5b3Nh5na34ttNpzNY0nWt3dUYVGjPr0fvbDCn6GYDB4cXpo9aGHRr_d0zEnsxW0cFuS7y_0QRLnI-39KJXtvWNd2WSga5TRhmA_g02Cv6S8sxg1-x0Qjk1Mjhn515rwMgOTZSRpeJk?width=1440&height=826&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 4',
+                                        src:'https://bn02pap001files.storage.live.com/y4m8hfYhNq-8XGCqcBqIooHBDYKF_7ugH55ya4HOCfpMgByyBL78bIS-ZriptB5X2PPja_K1IVHWjtFLNWROmK3A0F_ynG7uiFsVmUlB4BdeSE44VwA1vHGMepygbpUuosVacJy0L_mqyaGTtbkforp2_LLq9xB5kTaXlnWx_BhFiz9HTngb2cEOrjZ92S0ZSYN?width=1436&height=826&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 5',
+                                        src:'https://bn02pap001files.storage.live.com/y4mwuqM54Kd3CL_9xNH6w0bjzZgFp-WHXGW7UGd6rucssmVeaW0wtMKCdRHrP3qNyrhmptSpuh-tYk8x7d0i8ghADwJm3VLdqIXPIlFiJ3-Nq_LuLfNmezs5ozaQ9mJ7R66AE6IENdODZty-1iBrTigLcwU-O0Lfpd_hC4Y5OP60bjCBYp8J13IGYJfHTche_TQ?width=1440&height=822&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 6',
+                                        src:'https://bn02pap001files.storage.live.com/y4mRIzrb-08Ci3oWqVdAGT5cJ7s_Aud52xyOflfAupeuEsCQQJRJLlYwOYWUlAyrzN3D-1_dSFYl8KhgQbT6T0jOnt5MoWEWsBOrOGnxpc_R1ZfuDDFsnwte94XrDdm1lBvQ8A5hHJ3mxId8gW4dAEU2JHz5hXqgMv-1EeGTU8zmZIf52vpetfdqFrxB0TXf--R?width=1438&height=815&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 7',
+                                        src:'https://bn02pap001files.storage.live.com/y4mc15UWgzvFs3JE68Zwz3mMZ8b8pgsUyjMl8rgTxIrVW4rL6xplJGbHC3oB4QmwJiExTMUHEoF75Iwbzw2yhvysLWf3SSQXUIhwwHVaULPWu9kNUuvJc3Ctwgi0Zq9oJQ1IoWrQTYHYDkz_t9MO3-jVFjaSn2EtasdlnN0fJphmLISz6XSdUsCbkjXvK0f7Z1m?width=1440&height=825&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 8',
+                                        src:'https://bn02pap001files.storage.live.com/y4mxHEGfNbnysxkAIFEQabTvxiO9qqg4ATxBunE_TtevvQzZ2ECeIyzzl08RSN1YyBF5zdAuSVAzEOZCK-b-1TvGlEKhX8wwqxlN2u87seXqLbOu_tTuexDbGOoPpkq0ABx0xHdBYZFlzMD3HDz7rIH-V_8_8da2nHXOy6zDF0aZaZLNaX-81LU9Qeo1KBkof2e?width=1423&height=625&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 9',
+                                        src:'https://bn02pap001files.storage.live.com/y4mSKF9ZBuTmYJOyUi8gw6uZMQAODtHe4TBuoPuBiS6jymCUYjolIPbx2saKfRp61a2w3iBm_VrhF5EWmFE11jMn_f76jJlKB5-od99G8L8IVyWofORN9FggBqWCm5kKaN3-qb508c2RBmbYjRpOpj-N22ovfWTKvLRa0Twp5q14An7Mc8wIi0uq4XPwxRrgnzw?width=1423&height=768&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 10',
+                                        src:'https://bn02pap001files.storage.live.com/y4m7blZiH-uEuveqZHGz8xzs0XuLKYNppIVe81kEEaRoNThGPm4VLLj1y8smm2iJ94QS-Z5tzY6OqxUDbI-KW4tyoYFSWZdnnk21ll3SRXnwf3Ql8PybH5KTTQ1XPnhOzIt-NLIAL8tAbpkToWJ3D9zLuncIbNkAfF-xlOkir9JB4ehKoLrDYLfF6mp3KmX2Ist?width=1423&height=774&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 11',
+                                        src:'https://bn02pap001files.storage.live.com/y4mheN5hNhE1641Zeb4Z6CvAfWiMQVedUnEm6rVlqbADPX_N0Pkm-rORJjCVL2wn3btPiGTodcDN8aF2JLBcZRhlQEAXrN5wBIUq_CkkkGGPdxkGgecGuMx6f92ykha2DY_KPB-4sBvPQkPn5cWtJC7fjkXfQhFc_3sYl7THif0LTGJp3GrJxw2vNELVQuX9SHu?width=1423&height=765&cropmode=none'
+                                    },
+                                    {
+                                        alt: 'Rescate Animal - Sistema Web - 12',
+                                        src:'https://bn02pap001files.storage.live.com/y4mnPD5Em4oqtcWtsbqNhX4koYt54y8MDzQuphT_FPatV1ucSomcpl24cSan4jmXOdodFDDGLIceJhM6f_2HLZFBkO9TCnJ-OwRty5dfT9lstaMkJoKBkC94Kn3sqoU02b8dYYkFYrwFw__mcNxYghaMcgwqUCB2Bq3yIIvX3__eW92ssSvelyrDPw9SDyWmVQ0?width=1423&height=867&cropmode=none'
+                                    }
+                            ]})">Visualizar</a>
                         </div>
                     </div>
 

@@ -198,13 +198,16 @@
 
 /*Project card*/
 .project {
-    @apply bg-light-surface shadow rounded-md flex flex-col sm:flex-row md:flex-col lg:flex-row dark:bg-dark-surface;
+    @apply flex flex-col sm:flex-row md:flex-col lg:flex-row bg-light-surface shadow rounded-md  dark:bg-dark-surface;
+}
+.project-img-wrap {
+    @apply  w-full h-56 lg:w-1/2 lg:h-full;
 }
 .project-img {
-    @apply w-full h-52 sm:h-full md:h-52 lg:h-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md;
+    @apply  h-full w-full object-cover object-center rounded-t-md sm:rounded-t-none sm:rounded-l-md md:rounded-l-none md:rounded-t-md lg:rounded-t-none lg:rounded-l-md;
 }
 .project-content {
-    @apply w-full flex flex-col justify-center items-center px-4 py-5 space-y-2;
+    @apply w-full lg:w-1/2 flex flex-col justify-center items-center px-4 py-5 space-y-2;
 }
 .project-title {
     @apply text-xl md:text-2xl font-semibold tracking-wide dark:text-white text-center;
